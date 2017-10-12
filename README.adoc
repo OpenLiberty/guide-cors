@@ -173,10 +173,6 @@ Add two new attributes:
 maxAge:: The number of seconds that a client can cache a response to a preflight request. Set the value to `10`.
 allowedHeaders:: Headers that a client can use in requests. Set the value to `MyOwnHeader1, MyOwnHeader2`.
 
-The response for the `Access-Control-Allow-Origin` header has a value of `anywebsiteyoulike.com`
-because the server is configured to allow all origins, and the request came with an origin of
-`anywebsiteyoulike.com`.
-
 Save the changes to the `server.xml` file. The `/configurations/preflight` endpoint is now ready to
 be tested with a preflight CORS request.
 
@@ -209,6 +205,10 @@ Expect the following response headers and values if the preflight CORS request i
 | Access-Control-Allow-Headers | `MyOwnHeader1, MyOwnHeader2`
 |===
 
+The `Access-Control-Allow-Origin` header has a value of `anywebsiteyoulike.com`
+because the server is configured to allow all origins, and the request came with an origin of
+`anywebsiteyoulike.com`.
+
 Go to the `start/` directory and run the following command:
 
 ```
@@ -219,7 +219,7 @@ The `testPreflightCorsRequest` test passes and prints the response headers with 
 The `/configurations/preflight` endpoint now allows preflight CORS requests.
 
 If you want, modify the server configuration and the test code to experiment with the
-various CORS configurations.
+various CORS configuration attributes.
 
 
 // =================================================================================================
