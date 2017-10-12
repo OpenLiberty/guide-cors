@@ -226,9 +226,9 @@ various CORS configuration attributes.
 // Congratulations! You're done!
 // =================================================================================================
 
-== Congratulations! You're done!
+== Great Work! You're done!
 
-Congratulations! You enabled CORS support in Open Liberty. You added two different
+You enabled CORS support in Open Liberty. You added two different
 CORS configurations to allow two kinds of CORS requests in the `server.xml` file.
 
 
