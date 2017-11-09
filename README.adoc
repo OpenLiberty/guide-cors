@@ -8,6 +8,7 @@
 :projectid: cors
 :page-layout: guide
 :page-duration: 15 minutes
+:page-date: 2017-10-12
 :page-description: Learn how to enable CORS in Open Liberty
 :page-tags: ['CORS']
 :page-permalink: /guides/{projectid}
