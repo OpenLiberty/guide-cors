@@ -9,7 +9,7 @@
 :page-layout: guide
 :page-duration: 15 minutes
 :page-releasedate: 2017-10-12
-:page-description: Learn how to enable CORS in Open Liberty without writing Java code to access resources from an external domain
+:page-description: Learn how to enable CORS in Open Liberty without writing Java code to access resources from an external domain.
 :page-tags: ['CORS']
 :page-permalink: /guides/{projectid}
 :common-includes: https://raw.githubusercontent.com/OpenLiberty/guides-common/master/
