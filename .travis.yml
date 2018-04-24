@@ -8,13 +8,13 @@ script:
 notifications:
   slack: 
     template:
-        - "Build:  <%{build_url}|#%{build_number}> | Commit (<%{compare_url}|%{commit}>): %{commit_message}"
-        - "Repo/Branch: %{repository_slug}@%{branch}"
-        - "Author: %{author}" 
-        - "Summary: %{result} in %{duration}"
+      - "Build:  <%{build_url}|#%{build_number}> | Commit (<%{compare_url}|%{commit}>): %{commit_message}"
+      - "Repo/Branch: %{repository_slug}@%{branch}"
+      - "Author: %{author}" 
+      - "Summary: %{result} in %{duration}"
     rooms:
       - ibm-cloud:MMPGg2gSe7UmCdrEMoDrbhrI 
     on_success: never
 branches:
   only: 
-  - master
+    - master
