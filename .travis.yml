@@ -1,0 +1,20 @@
+language: java
+before_script:
+  - curl -O https://raw.githubusercontent.com/Ahmad-Ayyoub/guides-common/travis/ci-script.sh
+script: 
+  - cd finish
+  - mvn clean install
+  - build=$( grep "Open Liberty" target/liberty/wlp/usr/servers/defaultServer/logs/console.log | cut -d' ' -f5 | cut -d')' -f1 ); release=$( echo "$build" | cut -d'/' -f1); number=$( echo "$build" | cut -d'/' -f2); echo  "Open Liberty release $release"; echo  "Open Liberty build number $number";
+notifications:
+  slack: 
+    template:
+      - "Build:  <%{build_url}|#%{build_number}> | Commit (<%{compare_url}|%{commit}>): %{commit_message}"
+      - "Repo/Branch: %{repository_slug}@%{branch}"
+      - "Author: %{author}" 
+      - "Summary: %{result} in %{duration}"
+    rooms:
+      - ibm-cloud:MMPGg2gSe7UmCdrEMoDrbhrI 
+    on_success: never
+branches:
+  only: 
+    - master
