@@ -30,7 +30,7 @@ public class TestCors {
     public void setUp() {
         // JVM does not allow restricted headers by default
         // Set to true for CORS testing
-        System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
+        System.setProperty("sun.net.http.allowRestrictedHeaders");
     }
 
     // tag::simpleTest[]
