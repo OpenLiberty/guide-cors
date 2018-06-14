@@ -19,7 +19,8 @@
  
 Learn how to enable Cross-Origin Resource Sharing (CORS) in Open Liberty without writing Java code.
   
-  
+   
+   
  
 // =================================================================================================
 // What you'll learn
