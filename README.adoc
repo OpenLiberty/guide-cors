@@ -93,6 +93,7 @@ Send the simple request to the `/configurations/simple` endpoint and the preflig
 // Enabling a simple CORS configuration
 // =================================================================================================
 
+
 === Enabling a simple CORS configuration
 
 Configure the server to allow the `/configurations/simple` endpoint to accept a simple CORS request.
