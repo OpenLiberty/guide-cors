@@ -16,6 +16,9 @@
 :source-highlighter: prettify
 = Enabling Cross-Origin Resource Sharing (CORS) in Open Liberty
 
+[.hidden]
+NOTE: This repository contains the guide documentation source. To view the guide in published form, view it on the https://openliberty.io/guides/{projectid}.html[Open Liberty website].
+
 Learn how to enable Cross-Origin Resource Sharing (CORS) in Open Liberty without writing Java code.
 
 // =================================================================================================
