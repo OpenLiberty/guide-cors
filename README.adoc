@@ -135,6 +135,7 @@ Edit the TestCors class
 `src/test/java/it/io/openliberty/guides/cors/`
 ----
 
+TestCors.java
 [source, java, linenums, role=code_column']
 ----
 include::finish/src/test/java/it/io/openliberty/guides/cors/TestCors.java[tags=simpleTest]
