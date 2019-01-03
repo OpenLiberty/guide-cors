@@ -126,13 +126,12 @@ tested with a simple CORS request.
 
 Open `TestCors.java` file in the `start/src/test/java/it/io/openliberty/guides/cors/` directory.
 
-
 Now we will test the simple CORS configuration that you added.
 
 [role="code_command hotspot=25-78", subs="quotes"]
 ----
 Edit the TestCors class
-`src/test/java/it/io/openliberty/guides/cors/`
+`src/test/java/it/io/openliberty/guides/cors/TestCors`
 ----
 
 TestCors.java
@@ -162,9 +161,9 @@ Expect the following response headers and values if the simple CORS request is s
 Go to the `start/` directory and run the following command:
 
 [role=command]
-------------
+----
 mvn install
-------------
+----
 
 The [hotspot=38-46]`testSimpleCorsRequest` test passes and prints the response headers with their values from the endpoint. The
 `/configurations/simple` endpoint now accepts simple CORS requests.
@@ -179,6 +178,7 @@ The [hotspot=38-46]`testSimpleCorsRequest` test passes and prints the response h
 include::finish/src/main/liberty/config/server.xml[tags=preflight-config]
 ----
 
+TestCors.java
 [source, java, linenums, role='code_column']
 ----
 include::finish/src/test/java/it/io/openliberty/guides/cors/TestCors.java[tags=preflightTest]
@@ -233,9 +233,9 @@ because the server is configured to allow all origins, and the request came with
 Go to the `start/` directory and run the following command:
 
 [role=command]
-------------
+----
 mvn install
-------------
+----
 
 The [hotspot=51-59]`testPreflightCorsRequest` test passes and prints the response headers with their values from the endpoint.
 The `/configurations/preflight` endpoint now allows preflight CORS requests.
@@ -249,6 +249,12 @@ various CORS configuration attributes.
 // =================================================================================================
 
 == Great work! You're done!
+server.xml
+[source, xml, linenums, role='code_column']
+----
+include::finish/src/main/liberty/config/server.xml[tags=simple-config]
+----
+
 
 You enabled CORS support in Open Liberty. You added two different
 CORS configurations to allow two kinds of CORS requests in the [hotspot=1-29]`server.xml` file.
