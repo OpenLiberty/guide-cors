@@ -78,7 +78,7 @@ Next, the client sends the actual request, and the server responds.
 // =================================================================================================
 // Getting Started
 // =================================================================================================
-[role='command']
+[role=command]
 include::{common-includes}/gitclone.adoc[]
 
 
