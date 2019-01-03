@@ -223,7 +223,7 @@ The request is an [hotspot=41 file=1]`OPTIONS` HTTP request with the following h
 |===
 | *Header* | *Value*
 | Origin | anywebsiteyoulike.com
-| Access-Control-Request-Method | [hotspot=23 file=0]`DELETE`
+| Access-Control-Request-Method | [hotspot=20 file=0]`DELETE`
 | Access-Control-Request-Headers | [hotspot=22 file=0]`MyOwnHeader2`
 |===
 
