@@ -135,7 +135,7 @@ Edit the `TestCors` class
 TestCors.java
 [source, java, linenums, role='code_column']
 ----
-include::finish/src/test/java/it/io/openliberty/guides/cors/TestCors.java[tags=simpleTest]
+include::finish/src/test/java/it/io/openliberty/guides/cors/TestCors.java[tags=**]
 ----
 
 The [hotspot=38-46 file=1]`testSimpleCorsRequest` test simulates a client. It first sends a simple CORS request to the `/configurations/simple` endpoint, and then it checks for a valid response and expected headers. Lastly, it prints the response headers for you to inspect.
