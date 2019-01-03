@@ -109,7 +109,7 @@ Edit the server configuration file
 server.xml
 [source, xml, linenums, role='code_column']
 ----
-include::finish/src/main/liberty/config/server.xml[tags=simple-config]
+include::finish/src/main/liberty/config/server.xml[tags=**]
 ----
 
 The simple CORS configuration contains the following attributes:
@@ -129,7 +129,7 @@ Now we will test the simple CORS configuration that you added.
 
 [role="code_command hotspot=25-78 file=1", subs="quotes"]
 ----
-Edit the TestCors class
+Edit the `TestCors` class
 `src/test/java/it/io/openliberty/guides/cors/TestCors`
 ----
 TestCors.java
