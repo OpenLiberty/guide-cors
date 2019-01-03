@@ -173,6 +173,7 @@ The [hotspot=38-46]`testSimpleCorsRequest` test passes and prints the response h
 // =================================================================================================
 
 === Enabling a preflight CORS configuration
+server.xml
 [source, xml, linenums, role='code_column']
 ----
 include::finish/src/main/liberty/config/server.xml[tags=preflight-config]
