@@ -98,18 +98,6 @@ Send the simple request to the `/configurations/simple` endpoint and the preflig
 // =================================================================================================
 
 === Enabling a simple CORS configuration
-server.xml
-[source, xml, linenums, role='code_column']
-----
-include::finish/src/main/liberty/config/server.xml[tags=simple-config]
-----
-
-TestCors.java
-[source, java, linenums, role='code_column']
-----
-include::finish/src/test/java/it/io/openliberty/guides/cors/TestCors.java[tags=simpleTest]
-----
-
 Configure the server to allow the `/configurations/simple` endpoint to accept a simple CORS request.
 Add a simple CORS configuration to the [hotspot=1-29]`server.xml` file in the `start/main/liberty/config/` directory:
 
@@ -117,6 +105,11 @@ Add a simple CORS configuration to the [hotspot=1-29]`server.xml` file in the `s
 ----
 Edit the server configuration file
 `src/main/liberty/config/server.xml`
+----
+server.xml
+[source, xml, linenums, role='code_column']
+----
+include::finish/src/main/liberty/config/server.xml[tags=simple-config]
 ----
 
 The simple CORS configuration contains the following attributes:
@@ -138,6 +131,11 @@ Now we will test the simple CORS configuration that you added.
 ----
 Edit the TestCors class
 `src/test/java/it/io/openliberty/guides/cors/TestCors`
+----
+TestCors.java
+[source, java, linenums, role='code_column']
+----
+include::finish/src/test/java/it/io/openliberty/guides/cors/TestCors.java[tags=simpleTest]
 ----
 
 The [hotspot=38-46 file=1]`testSimpleCorsRequest` test simulates a client. It first sends a simple CORS request to the `/configurations/simple` endpoint, and then it checks for a valid response and expected headers. Lastly, it prints the response headers for you to inspect.
