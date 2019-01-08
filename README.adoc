@@ -195,10 +195,13 @@ Edit the server configuration file
 
 The preflight CORS configuration has different values than the simple CORS configuration.
 
-[hotspot=18 file=0]`domain`:: Set the value to `/configurations/preflight` because the `domain` is a different endpoint.
-[hotspot=19 file=0]`allowedOrigins`:: Set the value to an asterisk (*) to allow requests from all origins.
-[hotspot=20 file=0]`allowedMethods`:: Set the value to `OPTIONS, DELETE`.
-[hotspot=21 file=0]`allowCredentials`:: Set the value to `true`.
+|===
+| *Header* | *Value*
+| [hotspot=18 file=0]`domain`|Set the value to `/configurations/preflight` because the `domain` is a different endpoint.
+| [hotspot=19 file=0]`allowedOrigins`| Set the value to an asterisk (*) to allow requests from all origins.
+| [hotspot=20 file=0]`allowedMethods`| Set the value to `OPTIONS, DELETE`.
+| [hotspot=21 file=0]`allowCredentials`| Set the value to `true`.
+|===
 
 Add two new attributes:
 
