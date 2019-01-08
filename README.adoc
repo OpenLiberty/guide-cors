@@ -104,7 +104,7 @@ Add a simple CORS configuration to the [hotspot=1-29]`server.xml` file in the `s
 
 [role="code_command hotspot=12-16 file=0", subs="quotes"]
 ----
-Edit the server configuration file
+#Edit the server configuration file.#
 `src/main/liberty/config/server.xml`
 ----
 server.xml
@@ -115,11 +115,14 @@ include::finish/src/main/liberty/config/server.xml[tags=**]
 
 The simple CORS configuration contains the following attributes:
 
-[hotspot=12 file=0]`domain`:: The endpoint to be configured for CORS requests. Set the value to `/configurations/simple`.
-[hotspot=13 file=0]`allowedOrigins`:: Origins that are allowed to access the endpoint. Set the value to `openliberty.io`.
-[hotspot=14 file=0]`allowedMethods`:: HTTP methods that a client is allowed to use when it makes requests to the endpoint. Set the value to `GET`.
-[hotspot=15 file=0]`allowCredentials`:: A boolean that indicates whether the user credentials can be included in the request. Set the value to `true`.
-[hotspot=16 file=0]`exposeHeaders`:: Headers that are safe to expose to clients. Set the value to `MyHeader`.
+|===
+| *Header* | *Value*
+|[hotspot=12 file=0]`domain` | The endpoint to be configured for CORS requests. Set the value to `/configurations/simple`.
+|[hotspot=13 file=0]`allowedOrigins` | Origins that are allowed to access the endpoint. Set the value to `openliberty.io`.
+|[hotspot=14 file=0]`allowedMethods` | HTTP methods that a client is allowed to use when it makes requests to the endpoint. Set the value to `GET`.
+|[hotspot=15 file=0]`allowCredentials` | A boolean that indicates whether the user credentials can be included in the request. Set the value to `true`.
+|[hotspot=16 file=0]`exposeHeaders` | Headers that are safe to expose to clients. Set the value to `MyHeader`.
+|===
 
 Save the changes to the [hotspot=1-29 file=0]`server.xml` file. The `/configurations/simple` endpoint is now ready to be
 tested with a simple CORS request.
@@ -130,7 +133,7 @@ Now we will test the simple CORS configuration that you added.
 
 [role="code_command hotspot=25-33 file=1", subs="quotes"]
 ----
-Edit the `TestCors` class
+#Add the `testSimpleCorsRequest` method to the `TestCors` class.#
 `src/test/java/it/io/openliberty/guides/cors/TestCors.java`
 ----
 TestCors.java
@@ -189,7 +192,7 @@ Add another CORS configuration in the [hotspot=1-29 file=0]`server.xml` file in 
 
 [role="code_command hotspot=18-23 file=0", subs="quotes"]
 ----
-Edit the server configuration file
+#Edit the server configuration file.#
 `src/main/liberty/config/server.xml`
 ----
 
@@ -216,13 +219,13 @@ Add another test to the [hotspot=13-62 file=1]`TestCors.java` file in the `start
 
 [role="code_command hotspot=36-44 file=1", subs="quotes"]
 ----
-Edit the `TestCors` class
+#Add the `testPreflightCorsRequest` method to the `TestCors` class.#
 `src/test/java/it/io/openliberty/guides/cors/TestCors.java`
 ----
 
 The [hotspot=36-44 file=1]`testPreflightCorsRequest` test simulates a client sending a preflight CORS request. It first sends the request to the `/configurations/preflight` endpoint, and then it checks for a valid response and expected headers. Lastly, it prints the response headers for you to inspect.
 
-The request is an [hotspot=41 file=1]`OPTIONS` HTTP request with the following headers:
+The request is an [hotspot=39 file=1]`OPTIONS` HTTP request with the following headers:
 
 |===
 | *Header* | *Value*
