@@ -268,15 +268,9 @@ various CORS configuration attributes.
 // =================================================================================================
 
 == Great work! You're done!
-server.xml
-[source, xml, linenums, role='code_column']
-----
-include::finish/src/main/liberty/config/server.xml[tags=simple-config]
-----
-
 
 You enabled CORS support in Open Liberty. You added two different
-CORS configurations to allow two kinds of CORS requests in the [hotspot=1-29]`server.xml` file.
+CORS configurations to allow two kinds of CORS requests in the `server.xml` file.
 
 
 include::{common-includes}/finish.adoc[]
