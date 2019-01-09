@@ -100,7 +100,9 @@
                             <excludes>
                                 <exclude>**/it/**</exclude>
                             </excludes>
-                            <reportsDirectory>${project.build.directory}/test-reports/unit</reportsDirectory>
+                            <reportsDirectory>
+                                ${project.build.directory}/test-reports/unit
+                            </reportsDirectory>
                         </configuration>
                     </execution>
                 </executions>
@@ -120,8 +122,12 @@
                     <packageFile>${package.file}</packageFile>
                     <include>${packaging.type}</include>
                     <bootstrapProperties>
-                        <default.http.port>${testServerHttpPort}</default.http.port>
-                        <default.https.port>${testServerHttpsPort}</default.https.port>
+                        <default.http.port>
+                            ${testServerHttpPort}
+                        </default.http.port>
+                        <default.https.port>
+                            ${testServerHttpsPort}
+                        </default.https.port>
                     </bootstrapProperties>
                 </configuration>
                 <executions>
@@ -152,10 +158,18 @@
                                 <include>**/it/**</include>
                             </includes>
                             <systemPropertyVariables>
-                                <liberty.test.port>${testServerHttpPort}</liberty.test.port>
-                                <running.bluemix>${running.bluemix}</running.bluemix>
-                                <cf.context.root>${cf.context.root}</cf.context.root>
-                                <sun.net.http.allowRestrictedHeaders>true</sun.net.http.allowRestrictedHeaders>
+                                <liberty.test.port>
+                                    ${testServerHttpPort}
+                                </liberty.test.port>
+                                <running.bluemix>
+                                    ${running.bluemix}
+                                </running.bluemix>
+                                <cf.context.root>
+                                    ${cf.context.root}
+                                </cf.context.root>
+                                <sun.net.http.allowRestrictedHeaders>
+                                    true
+                                </sun.net.http.allowRestrictedHeaders>
                             </systemPropertyVariables>
                         </configuration>
                     </execution>
@@ -167,8 +181,12 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <summaryFile>${project.build.directory}/test-reports/it/failsafe-summary.xml</summaryFile>
-                    <reportsDirectory>${project.build.directory}/test-reports/it</reportsDirectory>
+                    <summaryFile>
+                        ${project.build.directory}/test-reports/it/failsafe-summary.xml
+                    </summaryFile>
+                    <reportsDirectory>
+                        ${project.build.directory}/test-reports/it
+                    </reportsDirectory>
                 </configuration>
             </plugin>
         </plugins>
