@@ -38,13 +38,6 @@
     </dependencyManagement>
 
     <dependencies>
-        <!-- For test -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
         <!-- Open Liberty features-->
         <dependency>
             <groupId>io.openliberty.features</groupId>
@@ -52,7 +45,18 @@
             <type>esa</type>
             <scope>provided</scope>
         </dependency>
+<<<<<<< HEAD
         <!-- Support for JDK 9 and above -->
+=======
+        <!-- For test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- For JDK 9 & 10 support -->
+>>>>>>> 985233d0262170821a59d68217d764f4d6d3d6f4
         <dependency>
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
