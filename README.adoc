@@ -124,7 +124,7 @@ The simple CORS configuration contains the following attributes:
 |[hotspot=16 file=0]`exposeHeaders` | Headers that are safe to expose to clients. Set the value to `MyHeader`.
 |===
 
-Save the changes to the [hotspot=1-29 file=0]`server.xml` file. The `/configurations/simple` endpoint is now ready to be
+Save the changes to the [hotspot=* file=0]`server.xml` file. The `/configurations/simple` endpoint is now ready to be
 tested with a simple CORS request.
 
 Open [hotspot=13-62 file=1]`TestCors.java` file in the `start/src/test/java/it/io/openliberty/guides/cors/` directory.
@@ -211,7 +211,7 @@ Add two new attributes:
 [hotspot=23 file=0]`maxAge`:: The number of seconds that a client can cache a response to a preflight request. Set the value to [hotspot=23 file=0]`10`.
 [hotspot=22 file=0]`allowedHeaders`:: Headers that a client can use in requests. Set the value to [hotspot=22 file=0]`MyOwnHeader1, MyOwnHeader2`.
 
-Save the changes to the [hotspot=1-29 file=0]`server.xml` file. The `/configurations/preflight` endpoint is now ready to
+Save the changes to the [hotspot=* file=0]`server.xml` file. The `/configurations/preflight` endpoint is now ready to
 be tested with a preflight CORS request.
 
 Add another test to the [hotspot=13-62 file=1]`TestCors.java` file in the `start/src/test/java/it/io/openliberty/guides/cors/` directory to test the preflight CORS configuration that you just added:
