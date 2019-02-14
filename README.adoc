@@ -159,8 +159,8 @@ Expect the following response headers and values if the simple CORS request is s
 |===
 | *Header* | *Value*
 | Access-Control-Allow-Origin | openliberty.io
-| Access-Control-Allow-Credentials | `true`
-| Access-Control-Expose-Headers | `MyHeader`
+| Access-Control-Allow-Credentials | [hotspot=15 file=0]`true`
+| Access-Control-Expose-Headers | [hotspot=16 file=0]`MyHeader`
 |===
 
 Go to the `start/` directory and run the following command:
