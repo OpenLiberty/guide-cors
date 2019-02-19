@@ -89,13 +89,13 @@ include::{common-includes}/gitclone.adoc[]
 // =================================================================================================
 
 == Enabling CORS
+Navigate to the `start` directory to begin.
 
 You will use a REST service that is already provided for you to test your CORS configurations. 
-Navigate to the `start` directory to begin.
-Find the service in the
-`src/main/java/io/openliberty/guides/cors/` directory.
+Find the service in the `src/main/java/io/openliberty/guides/cors/` directory.
 
-Send the simple request to the `/configurations/simple` endpoint and the preflight request to the `/configurations/preflight` endpoint.
+Send the simple request to the `/configurations/simple` endpoint and the preflight request 
+to the `/configurations/preflight` endpoint.
 
 // =================================================================================================
 // Enabling a simple CORS configuration
@@ -103,7 +103,7 @@ Send the simple request to the `/configurations/simple` endpoint and the preflig
 
 === Enabling a simple CORS configuration
 Configure the server to allow the `/configurations/simple` endpoint to accept a [hotspot=12-16 file=0]`simple` CORS request.
-Add a simple CORS configuration to the [hotspot file=0]`server.xml` file in the `src/main/liberty/config/` directory:
+Add a simple CORS configuration to the [hotspot file=0]`server.xml` file:
 
 [role="code_command hotspot file=0", subs="quotes"]
 ----
@@ -130,7 +130,7 @@ The simple CORS configuration contains the following attributes:
 Save the changes to the [hotspot file=0]`server.xml` file. The `/configurations/simple` endpoint is now ready to be
 tested with a simple CORS request.
 
-Open [hotspot file=1]`TestCors.java` file in the `src/test/java/it/io/openliberty/guides/cors/` directory.
+Open the [hotspot file=1]`TestCors.java` file in the `src/test/java/it/io/openliberty/guides/cors/` directory.
 
 Now we will test the simple CORS configuration that you added. Add the [hotspot=25-33 file=1]`testSimpleCorsRequest` method to the `TestCors` class.
 
@@ -139,10 +139,11 @@ Now we will test the simple CORS configuration that you added. Add the [hotspot=
 #Replace the `TestCors` class.#
 `src/test/java/it/io/openliberty/guides/cors/TestCors.java`
 ----
+
 TestCors.java
 [source, java, linenums, role='code_column']
 ----
-include::finish/src/test/java/it/io/openliberty/guides/cors/TestCors.java[tags=!comment;!preflightTest[]]
+include::finish/src/test/java/it/io/openliberty/guides/cors/TestCors.java[tags=!comment;!preflightTest]
 ----
 
 The [hotspot=25-33 file=1]`testSimpleCorsRequest` test simulates a client. It first sends a simple CORS request to the `/configurations/simple` endpoint, and then it checks for a valid response and expected headers. Lastly, it prints the response headers for you to inspect.
@@ -190,8 +191,8 @@ TestCors.java
 include::finish/src/test/java/it/io/openliberty/guides/cors/TestCors.java[tags=!comment]
 ----
 
-Configure the server to allow the `/configurations/preflight` endpoint to accept a [hotspot=1-29 file=0]`preflight` CORS request.
-Add another CORS configuration in the `server.xml` file in the `start/main/liberty/config/` directory:
+Configure the server to allow the `/configurations/preflight` endpoint to accept a [hotspot=18-23 file=0]`preflight` CORS request.
+Add another CORS configuration in the `server.xml` file:
 
 [role="code_command hotspot file=0", subs="quotes"]
 ----
@@ -211,15 +212,15 @@ The preflight CORS configuration has different values than the simple CORS confi
 
 The follow attributes were added:
 
-* [hotspot=23 file=0]`maxAge`:: The number of seconds that a client can cache a response to a preflight request. Set the value to [hotspot=23 file=0]`10`.
-* [hotspot=22 file=0]`allowedHeaders`:: Headers that a client can use in requests. Set the value to [hotspot=22 file=0]`MyOwnHeader1, MyOwnHeader2`.
+* [hotspot=23 file=0]`maxAge`: The number of seconds that a client can cache a response to a preflight request. Set the value to `10`.
+* [hotspot=22 file=0]`allowedHeaders`: Headers that a client can use in requests. Set the value to `MyOwnHeader1, MyOwnHeader2`.
 
 Save the changes to the [hotspot file=0]`server.xml` file. The `/configurations/preflight` endpoint is now ready to
 be tested with a preflight CORS request.
 
-Add another test to the [hotspot file=1]`TestCors.java` file in the `src/test/java/it/io/openliberty/guides/cors/` directory to test the preflight CORS configuration that you just added:
+Add another test to the [hotspot file=1]`TestCors.java` file to test the preflight CORS configuration that you just added:
 
-[role="code_command hotspot=36-44 file=1", subs="quotes"]
+[role="code_command hotspot file=1", subs="quotes"]
 ----
 #Replace the `TestCors` class.#
 `src/test/java/it/io/openliberty/guides/cors/TestCors.java`
