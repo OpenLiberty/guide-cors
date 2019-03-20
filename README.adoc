@@ -120,11 +120,11 @@ The simple CORS configuration contains the following attributes:
 
 |===
 | *Header* | *Value*
-|[hotspot=12 file=0]`domain` | The endpoint to be configured for CORS requests. Set the value to `/configurations/simple`.
-|[hotspot=13 file=0]`allowedOrigins` | Origins that are allowed to access the endpoint. Set the value to `openliberty.io`.
-|[hotspot=14 file=0]`allowedMethods` | HTTP methods that a client is allowed to use when it makes requests to the endpoint. Set the value to `GET`.
-|[hotspot=15 file=0]`allowCredentials` | A boolean that indicates whether the user credentials can be included in the request. Set the value to `true`.
-|[hotspot=16 file=0]`exposeHeaders` | Headers that are safe to expose to clients. Set the value to `MyHeader`.
+|[hotspot=12 file=0]`domain` | The endpoint to be configured for CORS requests. The value is set to `/configurations/simple`.
+|[hotspot=13 file=0]`allowedOrigins` | Origins that are allowed to access the endpoint. The value is set to `openliberty.io`.
+|[hotspot=14 file=0]`allowedMethods` | HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `GET`.
+|[hotspot=15 file=0]`allowCredentials` | A boolean that indicates whether the user credentials can be included in the request. The value is set to `true`.
+|[hotspot=16 file=0]`exposeHeaders` | Headers that are safe to expose to clients. The value is set to `MyHeader`.
 |===
 
 Save the changes to the [hotspot file=0]`server.xml` file. The `/configurations/simple` endpoint is now ready to be
@@ -152,16 +152,16 @@ The request is a `GET` HTTP request with the following header:
 
 |===
 | *Header* | *Value*
-| Origin | openliberty.io
+| Origin | Server name of where a fetch originates from. The value is set to `openliberty.io`.
 |===
 
 Expect the following response headers and values if the simple CORS request is successful, and the server is correctly configured:
 
 |===
 | *Header* | *Value*
-| Access-Control-Allow-Origin | openliberty.io
-| Access-Control-Allow-Credentials | [hotspot=15 file=0]`true`
-| Access-Control-Expose-Headers | [hotspot=16 file=0]`MyHeader`
+| Access-Control-Allow-Origin | Indicates whether the response can be shared with requesting code from the given origin (server name), can also be specified as a wildcard ‘*’ which allows access from any origin. The value is set to `openliberty.io`
+| Access-Control-Allow-Credentials | Indicates whether the response can be exposed to the frontend code. The value is set to [hotspot=15 file=0]`true`
+| Access-Control-Expose-Headers | Indicates which headers can be exposed. The value is set to [hotspot=16 file=0]`MyHeader`.
 |===
 
 Go to the `start/` directory and run the following command:
@@ -204,10 +204,10 @@ The preflight CORS configuration has different values than the simple CORS confi
 
 |===
 | *Header* | *Value*
-| [hotspot=18 file=0]`domain`|Set the value to `/configurations/preflight` because the `domain` is a different endpoint.
-| [hotspot=19 file=0]`allowedOrigins`| Set the value to an asterisk (*) to allow requests from all origins.
-| [hotspot=20 file=0]`allowedMethods`| Set the value to `OPTIONS, DELETE`.
-| [hotspot=21 file=0]`allowCredentials`| Set the value to `true`.
+| [hotspot=18 file=0]`domain`|The value is set to `/configurations/preflight` because the `domain` is a different endpoint.
+| [hotspot=19 file=0]`allowedOrigins`| The value is set to an asterisk (*) to allow requests from all origins.
+| [hotspot=20 file=0]`allowedMethods`| The value is set to `OPTIONS, DELETE`.
+| [hotspot=21 file=0]`allowCredentials`| The value is set to `true`.
 |===
 
 The follow attributes were added:
