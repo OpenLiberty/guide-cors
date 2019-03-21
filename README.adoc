@@ -159,7 +159,7 @@ Expect the following response headers and values if the simple CORS request is s
 
 |===
 | *Header* | *Value*
-| Access-Control-Allow-Origin | Indicates whether the response can be shared with requesting code from the given origin (server name), can also be specified as a wildcard ‘*’ which allows access from any origin. The value is set to `openliberty.io`
+| Access-Control-Allow-Origin | Indicates whether the response can be shared with requesting code from the given origin (server name). The value is set to `openliberty.io`
 | Access-Control-Allow-Credentials | Indicates whether the response can be exposed to the frontend code. The value is set to [hotspot=15 file=0]`true`
 | Access-Control-Expose-Headers | Indicates which headers can be exposed. The value is set to [hotspot=16 file=0]`MyHeader`.
 |===
@@ -233,19 +233,19 @@ The request is an [hotspot=39 file=1]`OPTIONS` HTTP request with the following h
 |===
 | *Header* | *Value*
 | Origin | anywebsiteyoulike.com
-| Access-Control-Request-Method | [hotspot=20 file=0]`DELETE`
-| Access-Control-Request-Headers | [hotspot=22 file=0]`MyOwnHeader2`
+| Access-Control-Request-Method | Indicates which HTTP method will be used when the actual request is made. The value is set to [hotspot=20 file=0]`DELETE`.
+| Access-Control-Request-Headers | Indicates which HTTP headers will be used when the actual request is made. The value is set to [hotspot=22 file=0]`MyOwnHeader2`
 |===
 
 Expect the following response headers and values if the preflight CORS request is successful, and the server is correctly configured:
 
 |===
 | *Header* | *Value*
-| Access-Control-Allow-Max-Age | [hotspot=23 file=0]`10`
-| Access-Control-Allow-Origin | anywebsiteyoulike.com
-| Access-Control-Allow-Methods | [hotspot=20 file=0]`OPTIONS, DELETE`
+| Access-Control-Allow-Max-Age | Indicates time in seconds that the preflight request can be cached. The value is set to [hotspot=23 file=0]`10`.
+| Access-Control-Allow-Origin | Indicates whether the response can be shared with requesting code from the given origin (server name). anywebsiteyoulike.com
+| Access-Control-Allow-Methods | Indicates method(s) allowed when accessing a resource in rsponse to a preflight request. The values are set to [hotspot=20 file=0]`OPTIONS, DELETE`.
 | Access-Control-Allow-Credentials | Indicates whether the response can be exposed to the frontend code. The value is set to [hotspot=21 file=0]`true`.
-| Access-Control-Allow-Headers | [hotspot=22 file=0]`MyOwnHeader1, MyOwnHeader2`
+| Access-Control-Allow-Headers | Indicates which HTTP headers can be used during actual request. The values are set to [hotspot=22 file=0]`MyOwnHeader1, MyOwnHeader2`.
 |===
 
 The `Access-Control-Allow-Origin` header has a value of `anywebsiteyoulike.com`
