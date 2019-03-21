@@ -244,7 +244,7 @@ Expect the following response headers and values if the preflight CORS request i
 | Access-Control-Allow-Max-Age | [hotspot=23 file=0]`10`
 | Access-Control-Allow-Origin | anywebsiteyoulike.com
 | Access-Control-Allow-Methods | [hotspot=20 file=0]`OPTIONS, DELETE`
-| Access-Control-Allow-Credentials | [hotspot=21 file=0]`true`
+| Access-Control-Allow-Credentials | Indicates whether the response can be exposed to the frontend code. The value is set to [hotspot=21 file=0]`true`.
 | Access-Control-Allow-Headers | [hotspot=22 file=0]`MyOwnHeader1, MyOwnHeader2`
 |===
 
