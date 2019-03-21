@@ -159,7 +159,7 @@ Expect the following response headers and values if the simple CORS request is s
 
 |===
 | *Header* | *Value*
-| Access-Control-Allow-Origin | Indicates whether the response can be shared with requesting code from the given origin (server name). The value is set to `openliberty.io`
+| Access-Control-Allow-Origin | Indicates whether the response can be shared with requesting code from the given origin (server name). The value is set to [hotspot=13 file=0]`openliberty.io`
 | Access-Control-Allow-Credentials | Indicates whether the response can be exposed to the frontend code. The value is set to [hotspot=15 file=0]`true`
 | Access-Control-Expose-Headers | HTTP Headers that can be exposed. The value is set to [hotspot=16 file=0]`MyHeader`.
 |===
@@ -232,7 +232,7 @@ The request is an [hotspot=39 file=1]`OPTIONS` HTTP request with the following h
 
 |===
 | *Header* | *Value*
-| Origin | anywebsiteyoulike.com
+| Origin | Server name of where a fetch originates from. `anywebsiteyoulike.com`
 | Access-Control-Request-Method | HTTP method that will be used when the actual request is made. The value is set to [hotspot=20 file=0]`DELETE`.
 | Access-Control-Request-Headers | HTTP headers that will be used when the actual request is made. The value is set to [hotspot=22 file=0]`MyOwnHeader2`
 |===
@@ -242,7 +242,7 @@ Expect the following response headers and values if the preflight CORS request i
 |===
 | *Header* | *Value*
 | Access-Control-Allow-Max-Age | The number of seconds that the preflight request can be cached. The value is set to [hotspot=23 file=0]`10`.
-| Access-Control-Allow-Origin | Indicates whether the response can be shared with requesting code from the given origin (server name). anywebsiteyoulike.com
+| Access-Control-Allow-Origin | Indicates whether the response can be shared with requesting code from the given origin (server name). `anywebsiteyoulike.com`
 | Access-Control-Allow-Methods | Method(s) allowed when accessing a resource in rsponse to a preflight request. The values are set to [hotspot=20 file=0]`OPTIONS, DELETE`.
 | Access-Control-Allow-Credentials | Indicates whether the response can be exposed to the frontend code. The value is set to [hotspot=21 file=0]`true`.
 | Access-Control-Allow-Headers | HTTP headers that can be used during actual request. The values are set to [hotspot=22 file=0]`MyOwnHeader1, MyOwnHeader2`.
