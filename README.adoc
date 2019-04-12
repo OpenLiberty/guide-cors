@@ -119,7 +119,7 @@ include::finish/src/main/liberty/config/server.xml[tags=**;!preflight-config]
 The simple CORS configuration contains the following attributes:
 
 |===
-| *Header* | *Value*
+| *Request Header* | *Request Value*
 |[hotspot=12 file=0]`domain` | The endpoint to be configured for CORS requests. The value is set to `/configurations/simple`.
 |[hotspot=13 file=0]`allowedOrigins` | Origins that are allowed to access the endpoint. The value is set to `openliberty.io`.
 |[hotspot=14 file=0]`allowedMethods` | HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `GET`.
@@ -151,17 +151,17 @@ The [hotspot=25-33 file=1]`testSimpleCorsRequest` test simulates a client. It fi
 The request is a [hotspot=28 file=1]`GET` HTTP request with the following header:
 
 |===
-| *Header* | *Value*
-| Origin | Server name of where a fetch originates from. The value is set to [hotspot=8 hotspot=26 file=2]`openliberty.io`.
+| *Request Header* | *Request Value*
+| Origin | The value is set to [hotspot=8 hotspot=26 file=2]`openliberty.io`.
 |===
 
 Expect the following response headers and values if the simple CORS request is successful, and the server is correctly configured:
 
 |===
-| *Header* | *Value*
-| Access-Control-Allow-Origin | Indicates whether the response can be shared with requesting code from the given origin (server name). The value is set to [hotspot=13 file=0]`openliberty.io`
-| Access-Control-Allow-Credentials | Indicates whether the response can be exposed to the frontend code. The value is set to [hotspot=15 file=0]`true`
-| Access-Control-Expose-Headers | HTTP Headers that can be exposed. The value is set to [hotspot=16 file=0]`MyHeader`.
+| *Response Header* | *Response Value*
+| Access-Control-Allow-Origin | The expected response value indicates whether the response can be shared with requesting code from the given origin (server name).
+| Access-Control-Allow-Credentials | The expected response value indicates whether the response can be exposed to the frontend code.
+| Access-Control-Expose-Headers | The expected response value indicates the HTTP Headers that can be exposed.
 |===
 
 Go to the `start/` directory and run the following command:
@@ -174,6 +174,7 @@ mvn install
 The [hotspot=25-33 file=1]`testSimpleCorsRequest` test passes and prints the response headers with their values from the endpoint. The
 `/configurations/simple` endpoint now accepts simple CORS requests.
 
+Response headers with their values from the endpoint:
 ```
 --- Simple CORS Request ---
 Header null = [HTTP/1.1 200 OK]
@@ -222,7 +223,7 @@ Add another CORS configuration in the `server.xml` file:
 The preflight CORS configuration has different values than the simple CORS configuration.
 
 |===
-| *Header* | *Value*
+| *Request Header* | *Request Value*
 | [hotspot=18 file=0]`domain`|The value is set to `/configurations/preflight` because the `domain` is a different endpoint.
 | [hotspot=19 file=0]`allowedOrigins`| Origins that are allowed to access the endpoint. The value is set to an asterisk (*) to allow requests from all origins.
 | [hotspot=20 file=0]`allowedMethods`| HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `OPTIONS, DELETE`.
@@ -250,7 +251,7 @@ The [hotspot=36-44 file=1]`testPreflightCorsRequest` test simulates a client sen
 The request is an [hotspot=39 file=1]`OPTIONS` HTTP request with the following headers:
 
 |===
-| *Header* | *Value*
+| *Request Header* | *Request Value*
 | Origin | Server name of where a fetch originates from. `anywebsiteyoulike.com`
 | Access-Control-Request-Method | HTTP method that will be used when the actual request is made. The value is set to [hotspot=20 file=0]`DELETE`.
 | Access-Control-Request-Headers | HTTP headers that will be used when the actual request is made. The value is set to [hotspot=22 file=0]`MyOwnHeader2`
@@ -259,12 +260,12 @@ The request is an [hotspot=39 file=1]`OPTIONS` HTTP request with the following h
 Expect the following response headers and values if the preflight CORS request is successful, and the server is correctly configured:
 
 |===
-| *Header* | *Value*
-| Access-Control-Allow-Max-Age | The number of seconds that the preflight request can be cached. The value is set to [hotspot=23 file=0]`10`.
-| Access-Control-Allow-Origin | Indicates whether the response can be shared with requesting code from the given origin (server name). `anywebsiteyoulike.com`
-| Access-Control-Allow-Methods | Method(s) allowed when accessing a resource in rsponse to a preflight request. The values are set to [hotspot=20 file=0]`OPTIONS, DELETE`.
-| Access-Control-Allow-Credentials | Indicates whether the response can be exposed to the frontend code. The value is set to [hotspot=21 file=0]`true`.
-| Access-Control-Allow-Headers | HTTP headers that can be used during actual request. The values are set to [hotspot=22 file=0]`MyOwnHeader1, MyOwnHeader2`.
+| *Response Header* | *Response Value*
+| Access-Control-Allow-Max-Age | The expected response value indicates number of seconds that the preflight request can be cached.
+| Access-Control-Allow-Origin | The expected response value indicates whether the response can be shared with requesting code from the given origin.
+| Access-Control-Allow-Methods | The expected response value indicates method(s) allowed when accessing a resource in rsponse to a preflight request. 
+| Access-Control-Allow-Credentials | The expected response value indicates whether the response can be exposed to the frontend code.
+| Access-Control-Allow-Headers | The expected response value indicates HTTP headers that can be used during actual request. 
 |===
 
 The `Access-Control-Allow-Origin` header has a value of `anywebsiteyoulike.com`
@@ -281,6 +282,7 @@ mvn install
 The [hotspot=36-44 file=1]`testPreflightCorsRequest` test passes and prints the response headers with their values from the endpoint.
 The `/configurations/preflight` endpoint now allows preflight CORS requests.
 
+Response headers with their values from the endpoint:
 ```
 --- Preflight CORS Request ---
 Header null = [HTTP/1.1 200 OK]
