@@ -264,7 +264,7 @@ Expect the following response headers and values if the preflight CORS request i
 | *Response Header* | *Response Value*
 | Access-Control-Allow-Max-Age | Indicates number of seconds that the preflight request can be cached. The response value is expected to be [hotspot=23 file=0]`10`.
 | Access-Control-Allow-Origin | Indicates whether the response can be shared with requesting code from the given origin. The response value is expected to be `anywebsiteyoulike.com`.
-| Access-Control-Allow-Methods | Indicates method(s) allowed when accessing a resource in rsponse to a preflight request. The response value is expected to be [hotspot=20 file=0]`OPTIONS, DELETE`.
+| Access-Control-Allow-Methods | Indicates method(s) allowed when accessing a resource in response to a preflight request. The response value is expected to be [hotspot=20 file=0]`OPTIONS, DELETE`.
 | Access-Control-Allow-Credentials | Indicates whether the response can be exposed to the frontend code. The response value is expected to be [hotspot=21 file=0]`true`.
 | Access-Control-Allow-Headers | Indicates HTTP headers that can be used during actual request. The response value is expected to be [hotspot=22 file=0]`MyOwnHeader1, MyOwnHeader2`.
 |===
