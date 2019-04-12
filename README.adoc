@@ -159,9 +159,9 @@ Expect the following response headers and values if the simple CORS request is s
 
 |===
 | *Response Header* | *Response Value*
-| Access-Control-Allow-Origin | Indicates whether the response can be shared with requesting code from the given origin (server name).
-| Access-Control-Allow-Credentials | Indicates whether the response can be exposed to the frontend code.
-| Access-Control-Expose-Headers | Indicates the HTTP Headers that can be exposed.
+| Access-Control-Allow-Origin | Indicates whether the response can be shared with requesting code from the given origin (server name). The response value is expected to be `openliberty.io`.
+| Access-Control-Allow-Credentials | Indicates whether the response can be exposed to the frontend code. The response value is expected to be [hotspot=15 file=0]`true`.
+| Access-Control-Expose-Headers | Indicates the HTTP Headers that can be exposed. The response value is expected to be [hotspot=16 file=0]`MyHeader`.
 |===
 
 Go to the `start/` directory and run the following command:
@@ -262,11 +262,11 @@ Expect the following response headers and values if the preflight CORS request i
 
 |===
 | *Response Header* | *Response Value*
-| Access-Control-Allow-Max-Age | Indicates number of seconds that the preflight request can be cached.
-| Access-Control-Allow-Origin | Indicates whether the response can be shared with requesting code from the given origin.
-| Access-Control-Allow-Methods | Indicates method(s) allowed when accessing a resource in rsponse to a preflight request. 
-| Access-Control-Allow-Credentials | Indicates whether the response can be exposed to the frontend code.
-| Access-Control-Allow-Headers | Indicates HTTP headers that can be used during actual request. 
+| Access-Control-Allow-Max-Age | Indicates number of seconds that the preflight request can be cached. The response value is expected to be [hotspot=23 file=0]`10`.
+| Access-Control-Allow-Origin | Indicates whether the response can be shared with requesting code from the given origin. The response value is expected to be `anywebsiteyoulike.com`.
+| Access-Control-Allow-Methods | Indicates method(s) allowed when accessing a resource in rsponse to a preflight request. The response value is expected to be [hotspot=20 file=0]`OPTIONS, DELETE`.
+| Access-Control-Allow-Credentials | Indicates whether the response can be exposed to the frontend code. The response value is expected to be [hotspot=21 file=0]`true`.
+| Access-Control-Allow-Headers | Indicates HTTP headers that can be used during actual request. The response value is expected to be [hotspot=22 file=0]`MyOwnHeader1, MyOwnHeader2`.
 |===
 
 The `Access-Control-Allow-Origin` header has a value of `anywebsiteyoulike.com`
