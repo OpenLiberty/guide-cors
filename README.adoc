@@ -175,6 +175,7 @@ The [hotspot=25-33 file=1]`testSimpleCorsRequest` test passes and prints the res
 `/configurations/simple` endpoint now accepts simple CORS requests.
 
 Response headers with their values from the endpoint:
+[role='no_copy']
 ```
 --- Simple CORS Request ---
 Header null = [HTTP/1.1 200 OK]
@@ -283,6 +284,7 @@ The [hotspot=36-44 file=1]`testPreflightCorsRequest` test passes and prints the 
 The `/configurations/preflight` endpoint now allows preflight CORS requests.
 
 Response headers with their values from the endpoint:
+[role='no_copy']
 ```
 --- Preflight CORS Request ---
 Header null = [HTTP/1.1 200 OK]
