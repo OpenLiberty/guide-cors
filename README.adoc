@@ -152,16 +152,16 @@ The request is a [hotspot=28 file=1]`GET` HTTP request with the following header
 
 |===
 | *Request Header* | *Request Value*
-| Origin | The value is set to [hotspot=8 hotspot=26 file=2]`openliberty.io`.
+| Origin | The value is set to [hotspot=8 hotspot=26 file=2]`openliberty.io`. Indicates that the request originates from `openliberty.io`.
 |===
 
 Expect the following response headers and values if the simple CORS request is successful, and the server is correctly configured:
 
 |===
 | *Response Header* | *Response Value*
-| Access-Control-Allow-Origin | Indicates whether the response can be shared with requesting code from the given origin (server name). The response value is expected to be `openliberty.io`.
-| Access-Control-Allow-Credentials | Indicates whether the response can be exposed to the frontend code. The response value is expected to be [hotspot=15 file=0]`true`.
-| Access-Control-Expose-Headers | Indicates the HTTP Headers that can be exposed. The response value is expected to be [hotspot=16 file=0]`MyHeader`.
+| Access-Control-Allow-Origin | The expected value is `openliberty.io`. Indicates whether the response can be shared with requesting code from the given origin (server name). 
+| Access-Control-Allow-Credentials | The expected value is [hotspot=15 file=0]`true`. Indicates whether the response can be exposed to the frontend code. 
+| Access-Control-Expose-Headers |  The expected value is [hotspot=16 file=0]`MyHeader`. Indicates the HTTP Headers that can be exposed.
 |===
 
 Go to the `start/` directory and run the following command:
@@ -253,20 +253,20 @@ The request is an [hotspot=39 file=1]`OPTIONS` HTTP request with the following h
 
 |===
 | *Request Header* | *Request Value*
-| Origin | Server name of where a fetch originates from. `anywebsiteyoulike.com`
-| Access-Control-Request-Method | HTTP method that will be used when the actual request is made. The value is set to [hotspot=20 file=0]`DELETE`.
-| Access-Control-Request-Headers | HTTP headers that will be used when the actual request is made. The value is set to [hotspot=22 file=0]`MyOwnHeader2`
+| Origin | The value is set to `anywebsiteyoulike.com`. Indicates that the request originates from `anywebsiteyoulike.com`.
+| Access-Control-Request-Method | The value is set to [hotspot=20 file=0]`DELETE`. Indicates that the HTTP DELETE method will be used in the actual request.
+| Access-Control-Request-Headers | The value is set to [hotspot=22 file=0]`MyOwnHeader2`. Indicates the header `MyOwnHeader2` will be used in the actual request.
 |===
 
 Expect the following response headers and values if the preflight CORS request is successful, and the server is correctly configured:
 
 |===
 | *Response Header* | *Response Value*
-| Access-Control-Allow-Max-Age | Indicates number of seconds that the preflight request can be cached. The response value is expected to be [hotspot=23 file=0]`10`.
-| Access-Control-Allow-Origin | Indicates whether the response can be shared with requesting code from the given origin. The response value is expected to be `anywebsiteyoulike.com`.
-| Access-Control-Allow-Methods | Indicates method(s) allowed when accessing a resource in response to a preflight request. The response value is expected to be [hotspot=20 file=0]`OPTIONS, DELETE`.
-| Access-Control-Allow-Credentials | Indicates whether the response can be exposed to the frontend code. The response value is expected to be [hotspot=21 file=0]`true`.
-| Access-Control-Allow-Headers | Indicates HTTP headers that can be used during actual request. The response value is expected to be [hotspot=22 file=0]`MyOwnHeader1, MyOwnHeader2`.
+| Access-Control-Allow-Max-Age | The expected value is [hotspot=23 file=0]`10`. Indicates that the preflight request can be cached within `10` seconds.
+| Access-Control-Allow-Origin | The expected value is `anywebsiteyoulike.com`. Indicates whether a resource can be shared based one the returning value of the Origin request header `anywebsiteyoulike.com`.
+| Access-Control-Allow-Methods | The expected value is [hotspot=20 file=0]`OPTIONS, DELETE`.  Indicates that HTTP OPTIONS and DELETE methods can be used in the actual request.
+| Access-Control-Allow-Credentials | The expected value is [hotspot=21 file=0]`true`. Indicates that the user credentials can be included in the request.
+| Access-Control-Allow-Headers | The expected value is [hotspot=22 file=0]`MyOwnHeader1, MyOwnHeader2`. Indicates that the header `MyOwnHeader1` and `MyOwnHeader2` are safe to expose.
 |===
 
 The `Access-Control-Allow-Origin` header has a value of `anywebsiteyoulike.com`
