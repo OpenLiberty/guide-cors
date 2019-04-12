@@ -59,10 +59,12 @@ public class TestCors {
     }
     // end::preflightTest[]
 
-    public void checkCorsResponse(HttpURLConnection connection, Map<String, String> expectedHeaders) throws IOException {
+    public void checkCorsResponse(HttpURLConnection connection, 
+                                Map<String, String> expectedHeaders) throws IOException {
         assertEquals("Invalid HTTP response code", 200, connection.getResponseCode());
         expectedHeaders.forEach((responseHeader, value) -> {
-            assertEquals("Unexpected value for " + responseHeader + " header", value, connection.getHeaderField(responseHeader));
+            assertEquals("Unexpected value for " + responseHeader + " header", value, 
+                                            connection.getHeaderField(responseHeader));
         });
     }
 

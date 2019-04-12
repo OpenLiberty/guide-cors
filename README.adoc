@@ -148,11 +148,11 @@ include::finish/src/test/java/it/io/openliberty/guides/cors/TestCors.java[tags=!
 
 The [hotspot=25-33 file=1]`testSimpleCorsRequest` test simulates a client. It first sends a simple CORS request to the `/configurations/simple` endpoint, and then it checks for a valid response and expected headers. Lastly, it prints the response headers for you to inspect.
 
-The request is a `GET` HTTP request with the following header:
+The request is a [hotspot=28 file=1]`GET` HTTP request with the following header:
 
 |===
 | *Header* | *Value*
-| Origin | Server name of where a fetch originates from. The value is set to `openliberty.io`.
+| Origin | Server name of where a fetch originates from. The value is set to [hotspot=8 hotspot=26 file=2]`openliberty.io`.
 |===
 
 Expect the following response headers and values if the simple CORS request is successful, and the server is correctly configured:
@@ -173,6 +173,25 @@ mvn install
 
 The [hotspot=25-33 file=1]`testSimpleCorsRequest` test passes and prints the response headers with their values from the endpoint. The
 `/configurations/simple` endpoint now accepts simple CORS requests.
+
+```
+--- Simple CORS Request ---
+Header null = [HTTP/1.1 200 OK]
+Header Access-Control-Expose-Headers = [MyHeader]
+Header Access-Control-Allow-Origin = [openliberty.io]
+Header Access-Control-Allow-Credentials = [true]
+Header Content-Length = [22]
+Header Content-Language = [en-CA]
+Header Date = [Thu, 21 Mar 2019 17:50:09 GMT]
+Header Content-Type = [text/plain]
+Header X-Powered-By = [Servlet/4.0]
+```
+
+TestData.java
+[source, java, linenums, role='code_column']
+----
+include::finish/src/test/java/it/io/openliberty/guides/cors/TestData.java[tags=*]
+----
 
 // =================================================================================================
 // Enabling a preflight CORS configuration
@@ -262,8 +281,29 @@ mvn install
 The [hotspot=36-44 file=1]`testPreflightCorsRequest` test passes and prints the response headers with their values from the endpoint.
 The `/configurations/preflight` endpoint now allows preflight CORS requests.
 
+```
+--- Preflight CORS Request ---
+Header null = [HTTP/1.1 200 OK]
+Header Access-Control-Allow-Max-Age = [10]
+Header Access-Control-Allow-Origin = [anywebsiteyoulike.com]
+Header Access-Control-Allow-Methods = [OPTIONS, DELETE]
+Header Access-Control-Allow-Credentials = [true]
+Header Content-Length = [0]
+Header Date = [Thu, 21 Mar 2019 18:21:13 GMT]
+Header Content-Language = [en-CA]
+Header Access-Control-Allow-Headers = [MyOwnHeader1, MyOwnHeader2]
+Header X-Powered-By = [Servlet/4.0]
+```
+
 If you want, modify the server configuration and the test code to experiment with the
 various CORS configuration attributes.
+
+After you are done, stop the Open Liberty server:
+[role='command']
+----
+mvn liberty:stop-server
+----
+
 
 
 // =================================================================================================
