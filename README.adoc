@@ -152,7 +152,7 @@ The request is a [hotspot=28 file=1]`GET` HTTP request with the following header
 
 |===
 | *Request Header* | *Request Value*
-| Origin | The value is set to [hotspot=8 hotspot=26 file=2]`openliberty.io`. Indicates that the request originates from `openliberty.io`.
+| Origin | The value is set to `openliberty.io`. Indicates that the request originates from `openliberty.io`.
 |===
 
 Expect the following response headers and values if the simple CORS request is successful, and the server is correctly configured:
@@ -160,8 +160,8 @@ Expect the following response headers and values if the simple CORS request is s
 |===
 | *Response Header* | *Response Value*
 | Access-Control-Allow-Origin | The expected value is `openliberty.io`. Indicates whether a resource can be shared based on the returning value of the Origin request header `openliberty.io`.
-| Access-Control-Allow-Credentials | The expected value is [hotspot=15 file=0]`true`. Indicates that the user credentials can be included in the request.
-| Access-Control-Expose-Headers |  The expected value is [hotspot=16 file=0]`MyHeader`. Indicates that the header `MyHeader` is safe to expose.
+| Access-Control-Allow-Credentials | The expected value is `true`. Indicates that the user credentials can be included in the request.
+| Access-Control-Expose-Headers |  The expected value is `MyHeader`. Indicates that the header `MyHeader` is safe to expose.
 |===
 
 Go to the `start/` directory and run the following command:
@@ -188,13 +188,6 @@ Header Date = [Thu, 21 Mar 2019 17:50:09 GMT]
 Header Content-Type = [text/plain]
 Header X-Powered-By = [Servlet/4.0]
 ```
-
-TestData.java
-[source, java, linenums, role='code_column']
-----
-include::finish/src/test/java/it/io/openliberty/guides/cors/TestData.java[tags=*]
-----
-
 // =================================================================================================
 // Enabling a preflight CORS configuration
 // =================================================================================================
@@ -224,7 +217,7 @@ Add another CORS configuration in the `server.xml` file:
 The preflight CORS configuration has different values than the simple CORS configuration.
 
 |===
-| *Contribution Attribute* | *Value*
+| *Configuration Attribute* | *Value*
 | [hotspot=18 file=0]`domain`|The value is set to `/configurations/preflight` because the `domain` is a different endpoint.
 | [hotspot=19 file=0]`allowedOrigins`| Origins that are allowed to access the endpoint. The value is set to an asterisk (*) to allow requests from all origins.
 | [hotspot=20 file=0]`allowedMethods`| HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `OPTIONS, DELETE`.
@@ -254,19 +247,19 @@ The request is an [hotspot=39 file=1]`OPTIONS` HTTP request with the following h
 |===
 | *Request Header* | *Request Value*
 | Origin | The value is set to `anywebsiteyoulike.com`. Indicates that the request originates from `anywebsiteyoulike.com`.
-| Access-Control-Request-Method | The value is set to [hotspot=20 file=0]`DELETE`. Indicates that the HTTP DELETE method will be used in the actual request.
-| Access-Control-Request-Headers | The value is set to [hotspot=22 file=0]`MyOwnHeader2`. Indicates the header `MyOwnHeader2` will be used in the actual request.
+| Access-Control-Request-Method | The value is set to `DELETE`. Indicates that the HTTP DELETE method will be used in the actual request.
+| Access-Control-Request-Headers | The value is set to `MyOwnHeader2`. Indicates the header `MyOwnHeader2` will be used in the actual request.
 |===
 
 Expect the following response headers and values if the preflight CORS request is successful, and the server is correctly configured:
 
 |===
 | *Response Header* | *Response Value*
-| Access-Control-Allow-Max-Age | The expected value is [hotspot=23 file=0]`10`. Indicates that the preflight request can be cached within `10` seconds.
+| Access-Control-Allow-Max-Age | The expected value is `10`. Indicates that the preflight request can be cached within `10` seconds.
 | Access-Control-Allow-Origin | The expected value is `anywebsiteyoulike.com`. Indicates whether a resource can be shared based on the returning value of the Origin request header `anywebsiteyoulike.com`.
-| Access-Control-Allow-Methods | The expected value is [hotspot=20 file=0]`OPTIONS, DELETE`.  Indicates that HTTP OPTIONS and DELETE methods can be used in the actual request.
-| Access-Control-Allow-Credentials | The expected value is [hotspot=21 file=0]`true`. Indicates that the user credentials can be included in the request.
-| Access-Control-Allow-Headers | The expected value is [hotspot=22 file=0]`MyOwnHeader1, MyOwnHeader2`. Indicates that the header `MyOwnHeader1` and `MyOwnHeader2` are safe to expose.
+| Access-Control-Allow-Methods | The expected value is `OPTIONS, DELETE`.  Indicates that HTTP OPTIONS and DELETE methods can be used in the actual request.
+| Access-Control-Allow-Credentials | The expected value is `true`. Indicates that the user credentials can be included in the request.
+| Access-Control-Allow-Headers | The expected value is `MyOwnHeader1, MyOwnHeader2`. Indicates that the header `MyOwnHeader1` and `MyOwnHeader2` are safe to expose.
 |===
 
 The `Access-Control-Allow-Origin` header has a value of `anywebsiteyoulike.com`
