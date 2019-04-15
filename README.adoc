@@ -119,7 +119,7 @@ include::finish/src/main/liberty/config/server.xml[tags=**;!preflight-config]
 The simple CORS configuration contains the following attributes:
 
 |===
-| *Request Header* | *Request Value*
+| *Configuration Attribute* | *Value*
 |[hotspot=12 file=0]`domain` | The endpoint to be configured for CORS requests. The value is set to `/configurations/simple`.
 |[hotspot=13 file=0]`allowedOrigins` | Origins that are allowed to access the endpoint. The value is set to `openliberty.io`.
 |[hotspot=14 file=0]`allowedMethods` | HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `GET`.
@@ -159,9 +159,9 @@ Expect the following response headers and values if the simple CORS request is s
 
 |===
 | *Response Header* | *Response Value*
-| Access-Control-Allow-Origin | The expected value is `openliberty.io`. Indicates whether the response can be shared with requesting code from the given origin (server name). 
-| Access-Control-Allow-Credentials | The expected value is [hotspot=15 file=0]`true`. Indicates whether the response can be exposed to the frontend code. 
-| Access-Control-Expose-Headers |  The expected value is [hotspot=16 file=0]`MyHeader`. Indicates the HTTP Headers that can be exposed.
+| Access-Control-Allow-Origin | The expected value is `openliberty.io`. Indicates whether a resource can be shared based on the returning value of the Origin request header `openliberty.io`.
+| Access-Control-Allow-Credentials | The expected value is [hotspot=15 file=0]`true`. Indicates that the user credentials can be included in the request.
+| Access-Control-Expose-Headers |  The expected value is [hotspot=16 file=0]`MyHeader`. Indicates that the header `MyHeader` is safe to expose.
 |===
 
 Go to the `start/` directory and run the following command:
@@ -224,7 +224,7 @@ Add another CORS configuration in the `server.xml` file:
 The preflight CORS configuration has different values than the simple CORS configuration.
 
 |===
-| *Request Header* | *Request Value*
+| *Contribution Attribute* | *Value*
 | [hotspot=18 file=0]`domain`|The value is set to `/configurations/preflight` because the `domain` is a different endpoint.
 | [hotspot=19 file=0]`allowedOrigins`| Origins that are allowed to access the endpoint. The value is set to an asterisk (*) to allow requests from all origins.
 | [hotspot=20 file=0]`allowedMethods`| HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `OPTIONS, DELETE`.
@@ -263,7 +263,7 @@ Expect the following response headers and values if the preflight CORS request i
 |===
 | *Response Header* | *Response Value*
 | Access-Control-Allow-Max-Age | The expected value is [hotspot=23 file=0]`10`. Indicates that the preflight request can be cached within `10` seconds.
-| Access-Control-Allow-Origin | The expected value is `anywebsiteyoulike.com`. Indicates whether a resource can be shared based one the returning value of the Origin request header `anywebsiteyoulike.com`.
+| Access-Control-Allow-Origin | The expected value is `anywebsiteyoulike.com`. Indicates whether a resource can be shared based on the returning value of the Origin request header `anywebsiteyoulike.com`.
 | Access-Control-Allow-Methods | The expected value is [hotspot=20 file=0]`OPTIONS, DELETE`.  Indicates that HTTP OPTIONS and DELETE methods can be used in the actual request.
 | Access-Control-Allow-Credentials | The expected value is [hotspot=21 file=0]`true`. Indicates that the user credentials can be included in the request.
 | Access-Control-Allow-Headers | The expected value is [hotspot=22 file=0]`MyOwnHeader1, MyOwnHeader2`. Indicates that the header `MyOwnHeader1` and `MyOwnHeader2` are safe to expose.
