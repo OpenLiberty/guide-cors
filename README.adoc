@@ -119,12 +119,12 @@ include::finish/src/main/liberty/config/server.xml[tags=**;!preflight-config]
 The simple CORS configuration contains the following attributes:
 
 |===
-| *Header* | *Value*
-|[hotspot=12 file=0]`domain` | The endpoint to be configured for CORS requests. Set the value to `/configurations/simple`.
-|[hotspot=13 file=0]`allowedOrigins` | Origins that are allowed to access the endpoint. Set the value to `openliberty.io`.
-|[hotspot=14 file=0]`allowedMethods` | HTTP methods that a client is allowed to use when it makes requests to the endpoint. Set the value to `GET`.
-|[hotspot=15 file=0]`allowCredentials` | A boolean that indicates whether the user credentials can be included in the request. Set the value to `true`.
-|[hotspot=16 file=0]`exposeHeaders` | Headers that are safe to expose to clients. Set the value to `MyHeader`.
+| *Configuration Attribute* | *Value*
+|[hotspot=12 file=0]`domain` | The endpoint to be configured for CORS requests. The value is set to `/configurations/simple`.
+|[hotspot=13 file=0]`allowedOrigins` | Origins that are allowed to access the endpoint. The value is set to `openliberty.io`.
+|[hotspot=14 file=0]`allowedMethods` | HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `GET`.
+|[hotspot=15 file=0]`allowCredentials` | A boolean that indicates whether the user credentials can be included in the request. The value is set to `true`.
+|[hotspot=16 file=0]`exposeHeaders` | Headers that are safe to expose to clients. The value is set to `MyHeader`.
 |===
 
 Save the changes to the [hotspot file=0]`server.xml` file. The `/configurations/simple` endpoint is now ready to be
@@ -148,20 +148,20 @@ include::finish/src/test/java/it/io/openliberty/guides/cors/TestCors.java[tags=!
 
 The [hotspot=25-33 file=1]`testSimpleCorsRequest` test simulates a client. It first sends a simple CORS request to the `/configurations/simple` endpoint, and then it checks for a valid response and expected headers. Lastly, it prints the response headers for you to inspect.
 
-The request is a `GET` HTTP request with the following header:
+The request is a [hotspot=28 file=1]`GET` HTTP request with the following header:
 
 |===
-| *Header* | *Value*
-| Origin | openliberty.io
+| *Request Header* | *Request Value*
+| Origin | The value is set to `openliberty.io`. Indicates that the request originates from `openliberty.io`.
 |===
 
 Expect the following response headers and values if the simple CORS request is successful, and the server is correctly configured:
 
 |===
-| *Header* | *Value*
-| Access-Control-Allow-Origin | openliberty.io
-| Access-Control-Allow-Credentials | [hotspot=15 file=0]`true`
-| Access-Control-Expose-Headers | [hotspot=16 file=0]`MyHeader`
+| *Response Header* | *Response Value*
+| Access-Control-Allow-Origin | The expected value is `openliberty.io`. Indicates whether a resource can be shared based on the returning value of the Origin request header `openliberty.io`.
+| Access-Control-Allow-Credentials | The expected value is `true`. Indicates that the user credentials can be included in the request.
+| Access-Control-Expose-Headers |  The expected value is `MyHeader`. Indicates that the header `MyHeader` is safe to expose.
 |===
 
 Go to the `start/` directory and run the following command:
@@ -174,6 +174,20 @@ mvn install
 The [hotspot=25-33 file=1]`testSimpleCorsRequest` test passes and prints the response headers with their values from the endpoint. The
 `/configurations/simple` endpoint now accepts simple CORS requests.
 
+Response headers with their values from the endpoint:
+[role='no_copy']
+```
+--- Simple CORS Request ---
+Header null = [HTTP/1.1 200 OK]
+Header Access-Control-Expose-Headers = [MyHeader]
+Header Access-Control-Allow-Origin = [openliberty.io]
+Header Access-Control-Allow-Credentials = [true]
+Header Content-Length = [22]
+Header Content-Language = [en-CA]
+Header Date = [Thu, 21 Mar 2019 17:50:09 GMT]
+Header Content-Type = [text/plain]
+Header X-Powered-By = [Servlet/4.0]
+```
 // =================================================================================================
 // Enabling a preflight CORS configuration
 // =================================================================================================
@@ -203,11 +217,11 @@ Add another CORS configuration in the `server.xml` file:
 The preflight CORS configuration has different values than the simple CORS configuration.
 
 |===
-| *Header* | *Value*
-| [hotspot=18 file=0]`domain`|Set the value to `/configurations/preflight` because the `domain` is a different endpoint.
-| [hotspot=19 file=0]`allowedOrigins`| Set the value to an asterisk (*) to allow requests from all origins.
-| [hotspot=20 file=0]`allowedMethods`| Set the value to `OPTIONS, DELETE`.
-| [hotspot=21 file=0]`allowCredentials`| Set the value to `true`.
+| *Configuration Attribute* | *Value*
+| [hotspot=18 file=0]`domain`|The value is set to `/configurations/preflight` because the `domain` is a different endpoint.
+| [hotspot=19 file=0]`allowedOrigins`| Origins that are allowed to access the endpoint. The value is set to an asterisk (*) to allow requests from all origins.
+| [hotspot=20 file=0]`allowedMethods`| HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `OPTIONS, DELETE`.
+| [hotspot=21 file=0]`allowCredentials`| A boolean that indicates whether the user credentials can be included in the request. The value is set to `true`.
 |===
 
 The follow attributes were added:
@@ -231,21 +245,21 @@ The [hotspot=36-44 file=1]`testPreflightCorsRequest` test simulates a client sen
 The request is an [hotspot=39 file=1]`OPTIONS` HTTP request with the following headers:
 
 |===
-| *Header* | *Value*
-| Origin | anywebsiteyoulike.com
-| Access-Control-Request-Method | [hotspot=20 file=0]`DELETE`
-| Access-Control-Request-Headers | [hotspot=22 file=0]`MyOwnHeader2`
+| *Request Header* | *Request Value*
+| Origin | The value is set to `anywebsiteyoulike.com`. Indicates that the request originates from `anywebsiteyoulike.com`.
+| Access-Control-Request-Method | The value is set to `DELETE`. Indicates that the HTTP DELETE method will be used in the actual request.
+| Access-Control-Request-Headers | The value is set to `MyOwnHeader2`. Indicates the header `MyOwnHeader2` will be used in the actual request.
 |===
 
 Expect the following response headers and values if the preflight CORS request is successful, and the server is correctly configured:
 
 |===
-| *Header* | *Value*
-| Access-Control-Allow-Max-Age | [hotspot=23 file=0]`10`
-| Access-Control-Allow-Origin | anywebsiteyoulike.com
-| Access-Control-Allow-Methods | [hotspot=20 file=0]`OPTIONS, DELETE`
-| Access-Control-Allow-Credentials | [hotspot=21 file=0]`true`
-| Access-Control-Allow-Headers | [hotspot=22 file=0]`MyOwnHeader1, MyOwnHeader2`
+| *Response Header* | *Response Value*
+| Access-Control-Allow-Max-Age | The expected value is `10`. Indicates that the preflight request can be cached within `10` seconds.
+| Access-Control-Allow-Origin | The expected value is `anywebsiteyoulike.com`. Indicates whether a resource can be shared based on the returning value of the Origin request header `anywebsiteyoulike.com`.
+| Access-Control-Allow-Methods | The expected value is `OPTIONS, DELETE`. Indicates that HTTP OPTIONS and DELETE methods can be used in the actual request.
+| Access-Control-Allow-Credentials | The expected value is `true`. Indicates that the user credentials can be included in the request.
+| Access-Control-Allow-Headers | The expected value is `MyOwnHeader1, MyOwnHeader2`. Indicates that the header `MyOwnHeader1` and `MyOwnHeader2` are safe to expose.
 |===
 
 The `Access-Control-Allow-Origin` header has a value of `anywebsiteyoulike.com`
@@ -262,8 +276,31 @@ mvn install
 The [hotspot=36-44 file=1]`testPreflightCorsRequest` test passes and prints the response headers with their values from the endpoint.
 The `/configurations/preflight` endpoint now allows preflight CORS requests.
 
+Response headers with their values from the endpoint:
+[role='no_copy']
+```
+--- Preflight CORS Request ---
+Header null = [HTTP/1.1 200 OK]
+Header Access-Control-Allow-Max-Age = [10]
+Header Access-Control-Allow-Origin = [anywebsiteyoulike.com]
+Header Access-Control-Allow-Methods = [OPTIONS, DELETE]
+Header Access-Control-Allow-Credentials = [true]
+Header Content-Length = [0]
+Header Date = [Thu, 21 Mar 2019 18:21:13 GMT]
+Header Content-Language = [en-CA]
+Header Access-Control-Allow-Headers = [MyOwnHeader1, MyOwnHeader2]
+Header X-Powered-By = [Servlet/4.0]
+```
+
 If you want, modify the server configuration and the test code to experiment with the
 various CORS configuration attributes.
+
+After you are done, stop the Open Liberty server:
+[role='command']
+----
+mvn liberty:stop-server
+----
+
 
 
 // =================================================================================================
