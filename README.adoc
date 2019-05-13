@@ -295,13 +295,6 @@ Header X-Powered-By = [Servlet/4.0]
 If you want, modify the server configuration and the test code to experiment with the
 various CORS configuration attributes.
 
-After you are done, stop the Open Liberty server:
-[role='command']
-----
-mvn liberty:stop-server
-----
-
-
 
 // =================================================================================================
 // Congratulations! You're done!
