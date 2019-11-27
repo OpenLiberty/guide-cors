@@ -1,4 +1,4 @@
-// tag::comment[]
+// tag::copyright[]
 /*******************************************************************************
  * Copyright (c) 2017, 2019 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -9,7 +9,7 @@
  * Contributors:
  *     IBM Corporation - Initial implementation
  *******************************************************************************/
-// end::comment[]
+// end::copyright[]
 package it.io.openliberty.guides.cors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -23,7 +23,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class CorsIT {
-    
+
     String port = System.getProperty("default.http.port");
     String pathToHost = "http://localhost:" + port + "/";
 
@@ -34,29 +34,33 @@ public class CorsIT {
         System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
     }
 
-    // tag::simpleTest[]
+    // tag::testSimpleCorsRequest[]
     @Test
     public void testSimpleCorsRequest() throws IOException {
         HttpURLConnection connection = HttpUtils.sendRequest(
+                        // tag::testSimpleCorsRequest-get[]
                         pathToHost + "configurations/simple", "GET",
+                        // end::testSimpleCorsRequest-get[]
                         TestData.simpleRequestHeaders);
         checkCorsResponse(connection, TestData.simpleResponseHeaders);
 
         printResponseHeaders(connection, "Simple CORS Request");
     }
-    // end::simpleTest[]
+    // end::testSimpleCorsRequest[]
 
-    // tag::preflightTest[]
+    // tag::testPreflightCorsRequest[]
     @Test
     public void testPreflightCorsRequest() throws IOException {
         HttpURLConnection connection = HttpUtils.sendRequest(
+                        // tag::testPreflightCorsRequest-options[]
                         pathToHost + "configurations/preflight", "OPTIONS",
+                        // end::testPreflightCorsRequest-options[]
                         TestData.preflightRequestHeaders);
         checkCorsResponse(connection, TestData.preflightResponseHeaders);
 
         printResponseHeaders(connection, "Preflight CORS Request");
     }
-    // end::preflightTest[]
+    // end::testPreflightCorsRequest[]
 
     public void checkCorsResponse(HttpURLConnection connection,
                     Map<String, String> expectedHeaders) throws IOException {
