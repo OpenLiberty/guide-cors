@@ -116,12 +116,12 @@ Add a simple CORS configuration to the [hotspot file=0]`server.xml` file:
 `src/main/liberty/config/server.xml`
 ----
 server.xml
-[source, xml, linenums, role='code_column']
+[source, xml, linenums, role='code_column hide_tags=preflight-config']
 ----
-include::finish/src/main/liberty/config/server.xml[tags=**;!preflight-config]
+include::finish/src/main/liberty/config/server.xml[]
 ----
 
-The simple CORS configuration contains the following attributes:
+The CORS configuration contains the following attributes:
 
 |===
 | *Configuration Attribute* | *Value*
@@ -146,9 +146,9 @@ Now we will test the simple CORS configuration that you added. Add the [hotspot=
 ----
 
 CorsIT.java
-[source, java, linenums, role='code_column']
+[source, java, linenums, role='code_column hide_tags=preflightTest']
 ----
-include::finish/src/test/java/it/io/openliberty/guides/cors/CorsIT.java[tags=!comment;!preflightTest]
+include::finish/src/test/java/it/io/openliberty/guides/cors/CorsIT.java[]
 ----
 
 The [hotspot=testSimpleCorsRequest file=1]`testSimpleCorsRequest` test simulates a client. It first sends a simple CORS request to the `/configurations/simple` endpoint, and then it checks for a valid response and expected headers. Lastly, it prints the response headers for you to inspect.
@@ -196,7 +196,7 @@ Header X-Powered-By = [Servlet/4.0]
 server.xml
 [source, xml, linenums, role='code_column']
 ----
-include::finish/src/main/liberty/config/server.xml[tags=**]
+include::finish/src/main/liberty/config/server.xml[]
 ----
 
 CorsIT.java
