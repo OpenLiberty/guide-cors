@@ -12,33 +12,34 @@
 // end::comment[]
 package it.io.openliberty.guides.cors;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class TestCors {
+public class CorsIT {
 
-    String pathToHost = "http://localhost:9080/";
+    String port = System.getProperty("default.http.port");
+    String pathToHost = "http://localhost:" + port + "/";
 
-    @Before
+    @BeforeEach
     public void setUp() {
         // JVM does not allow restricted headers by default
         // Set to true for CORS testing
         System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
     }
 
-    public void checkCorsResponse(HttpURLConnection connection, 
+    public void checkCorsResponse(HttpURLConnection connection,
                             Map<String, String> expectedHeaders) throws IOException {
-        assertEquals("Invalid HTTP response code", 200, connection.getResponseCode());
+        assertEquals(200, connection.getResponseCode(), "Invalid HTTP response code");
         expectedHeaders.forEach((responseHeader, value) -> {
-            assertEquals("Unexpected value for " + responseHeader + " header", value, 
-                                            connection.getHeaderField(responseHeader));
+            assertEquals(value, connection.getHeaderField(responseHeader),
+                            "Unexpected value for " + responseHeader + " header");
         });
     }
 
