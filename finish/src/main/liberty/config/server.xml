@@ -13,41 +13,19 @@
 <webApplication location="guide-cors.war" contextRoot="/"/>
 
 <!-- tag::simple-config[] -->
-<!-- tag::simple-domain[] -->
 <cors domain="/configurations/simple"
-<!-- end::simple-domain[] -->
-    <!-- tag::simple-allowedOrigins[] -->
     allowedOrigins="openliberty.io"
-    <!-- end::simple-allowedOrigins[] -->
-    <!-- tag::simple-allowedMethods[] -->
     allowedMethods="GET"
-    <!-- end::simple-allowedMethods[] -->
-    <!-- tag::simple-allowCredentials[] -->
     allowCredentials="true"
-    <!-- end::simple-allowCredentials[] -->
-    <!-- tag::simple-exposeHeaders[] -->
     exposeHeaders="MyHeader"/>
-    <!-- end::simple-exposeHeaders[] -->
 <!-- end::simple-config[] -->
 
 <!-- tag::preflight-config[] -->
-<!-- tag::preflight-domain[] -->
 <cors domain="/configurations/preflight"
-<!-- end::preflight-domain[] -->
-    <!-- tag::preflight-allowedOrigins[] -->
     allowedOrigins="*"
-    <!-- end::preflight-allowedOrigins[] -->
-    <!-- tag::preflight-allowedMethods[] -->
     allowedMethods="OPTIONS, DELETE"
-    <!-- end::preflight-allowedMethods[] -->
-    <!-- tag::preflight-allowCredentials[] -->
     allowCredentials="true"
-    <!-- end::preflight-allowCredentials[] -->
-    <!-- tag::preflight-allowedHeaders[] -->
     allowedHeaders="MyOwnHeader1, MyOwnHeader2"
-    <!-- end::preflight-allowedHeaders[] -->
-    <!-- tag::preflight-maxAge[] -->
     maxAge="10"/>
-    <!-- end::preflight-maxAge[] -->
 <!-- end::preflight-config[] -->
 </server>
