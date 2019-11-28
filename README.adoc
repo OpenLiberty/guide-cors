@@ -125,11 +125,11 @@ The CORS configuration contains the following attributes:
 
 |===
 | *Configuration Attribute* | *Value*
-|[hotspot=15 file=0]`domain` | The endpoint to be configured for CORS requests. The value is set to `/configurations/simple`.
-|[hotspot=16 file=0]`allowedOrigins` | Origins that are allowed to access the endpoint. The value is set to `openliberty.io`.
-|[hotspot=17 file=0]`allowedMethods` | HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `GET`.
-|[hotspot=18 file=0]`allowCredentials` | A boolean that indicates whether the user credentials can be included in the request. The value is set to `true`.
-|[hotspot=19 file=0]`exposeHeaders` | Headers that are safe to expose to clients. The value is set to `MyHeader`.
+|[hotspot=16 file=0]`domain` | The endpoint to be configured for CORS requests. The value is set to `/configurations/simple`.
+|[hotspot=17 file=0]`allowedOrigins` | Origins that are allowed to access the endpoint. The value is set to `openliberty.io`.
+|[hotspot=18 file=0]`allowedMethods` | HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `GET`.
+|[hotspot=19 file=0]`allowCredentials` | A boolean that indicates whether the user credentials can be included in the request. The value is set to `true`.
+|[hotspot=20 file=0]`exposeHeaders` | Headers that are safe to expose to clients. The value is set to `MyHeader`.
 |===
 
 Save the changes to the [hotspot file=0]`server.xml` file. The `/configurations/simple` endpoint is now ready to be
@@ -146,14 +146,14 @@ Now we will test the simple CORS configuration that you added. Add the [hotspot=
 ----
 
 CorsIT.java
-[source, java, linenums, role='code_column hide_tags=preflightTest']
+[source, java, linenums, role='code_column hide_tags=copyright,testPreflightCorsRequest']
 ----
 include::finish/src/test/java/it/io/openliberty/guides/cors/CorsIT.java[]
 ----
 
 The [hotspot=testSimpleCorsRequest file=1]`testSimpleCorsRequest` test simulates a client. It first sends a simple CORS request to the `/configurations/simple` endpoint, and then it checks for a valid response and expected headers. Lastly, it prints the response headers for you to inspect.
 
-The request is a [hotspot=testSimpleCorsRequest-get file=1]`GET` HTTP request with the following header:
+The request is a [hotspot=get file=1]`GET` HTTP request with the following header:
 
 |===
 | *Request Header* | *Request Value*
@@ -218,16 +218,16 @@ The preflight CORS configuration has different values than the simple CORS confi
 
 |===
 | *Configuration Attribute* | *Value*
-| [hotspot=21 file=0]`domain`|The value is set to `/configurations/preflight` because the `domain` is a different endpoint.
-| [hotspot=22 file=0]`allowedOrigins`| Origins that are allowed to access the endpoint. The value is set to an asterisk (*) to allow requests from all origins.
-| [hotspot=23 file=0]`allowedMethods`| HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `OPTIONS, DELETE`.
-| [hotspot=24 file=0]`allowCredentials`| A boolean that indicates whether the user credentials can be included in the request. The value is set to `true`.
+| [hotspot=24 file=0]`domain`|The value is set to `/configurations/preflight` because the `domain` is a different endpoint.
+| [hotspot=25 file=0]`allowedOrigins`| Origins that are allowed to access the endpoint. The value is set to an asterisk (*) to allow requests from all origins.
+| [hotspot=26 file=0]`allowedMethods`| HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `OPTIONS, DELETE`.
+| [hotspot=27 file=0]`allowCredentials`| A boolean that indicates whether the user credentials can be included in the request. The value is set to `true`.
 |===
 
 The follow attributes were added:
 
-* [hotspot=25 file=0]`allowedHeaders`: Headers that a client can use in requests. Set the value to `MyOwnHeader1, MyOwnHeader2`.
-* [hotspot=26 file=0]`maxAge`: The number of seconds that a client can cache a response to a preflight request. Set the value to `10`.
+* [hotspot=28 file=0]`allowedHeaders`: Headers that a client can use in requests. Set the value to `MyOwnHeader1, MyOwnHeader2`.
+* [hotspot=29 file=0]`maxAge`: The number of seconds that a client can cache a response to a preflight request. Set the value to `10`.
 
 Save the changes to the [hotspot file=0]`server.xml` file. The `/configurations/preflight` endpoint is now ready to
 be tested with a preflight CORS request.
@@ -242,7 +242,7 @@ Add another test to the [hotspot file=1]`CorsIT.java` file to test the preflight
 
 The [hotspot=testPreflightCorsRequest file=1]`testPreflightCorsRequest` test simulates a client sending a preflight CORS request. It first sends the request to the `/configurations/preflight` endpoint, and then it checks for a valid response and expected headers. Lastly, it prints the response headers for you to inspect.
 
-The request is an [hotspot=testPreflightCorsRequest-options file=1]`OPTIONS` HTTP request with the following headers:
+The request is an [hotspot=options file=1]`OPTIONS` HTTP request with the following headers:
 
 |===
 | *Request Header* | *Request Value*

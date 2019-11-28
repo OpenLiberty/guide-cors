@@ -38,9 +38,9 @@ public class CorsIT {
     @Test
     public void testSimpleCorsRequest() throws IOException {
         HttpURLConnection connection = HttpUtils.sendRequest(
-                        // tag::testSimpleCorsRequest-get[]
+                        // tag::get[]
                         pathToHost + "configurations/simple", "GET",
-                        // end::testSimpleCorsRequest-get[]
+                        // end::get[]
                         TestData.simpleRequestHeaders);
         checkCorsResponse(connection, TestData.simpleResponseHeaders);
 
@@ -52,9 +52,9 @@ public class CorsIT {
     @Test
     public void testPreflightCorsRequest() throws IOException {
         HttpURLConnection connection = HttpUtils.sendRequest(
-                        // tag::testPreflightCorsRequest-options[]
+                        // tag::options[]
                         pathToHost + "configurations/preflight", "OPTIONS",
-                        // end::testPreflightCorsRequest-options[]
+                        // end::options[]
                         TestData.preflightRequestHeaders);
         checkCorsResponse(connection, TestData.preflightResponseHeaders);
 
