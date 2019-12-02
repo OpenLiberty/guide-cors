@@ -169,7 +169,7 @@ Expect the following response headers and values if the simple CORS request is s
 | Access-Control-Expose-Headers |  The expected value is `MyHeader`. Indicates that the header `MyHeader` is safe to expose.
 |===
 
-Since you started Open Liberty in development mode at the start of the guide, press the enter/return key to run the tests.
+Since you started Open Liberty in development mode at the start of the guide, press the `enter/return` key to run the tests.
 
 The [hotspot=testSimpleCorsRequest file=1]`testSimpleCorsRequest` test passes and prints the response headers with their values from the endpoint. The
 `/configurations/simple` endpoint now accepts simple CORS requests.
@@ -266,7 +266,7 @@ The `Access-Control-Allow-Origin` header has a value of `anywebsiteyoulike.com`
 because the server is configured to allow all origins, and the request came with an origin of
 `anywebsiteyoulike.com`.
 
-Since you started Open Liberty in development mode at the start of the guide, press the enter/return key to run the tests.
+Since you started Open Liberty in development mode at the start of the guide, press the `enter/return` key to run the tests.
 
 The [hotspot=testPreflightCorsRequest file=1]`testPreflightCorsRequest` test passes and prints the response headers with their values from the endpoint.
 The `/configurations/preflight` endpoint now allows preflight CORS requests.
@@ -290,6 +290,8 @@ Header X-Powered-By = [Servlet/4.0]
 If you want, modify the server configuration and the test code to experiment with the
 various CORS configuration attributes.
 
+[role='command']
+include::{common-includes}/devmode-quit.adoc[]
 
 // =================================================================================================
 // Congratulations! You're done!
