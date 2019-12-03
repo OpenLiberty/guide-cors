@@ -4,10 +4,13 @@
     <feature>jaxrs-2.1</feature>
 </featureManager>
 
+<variable name="default.http.port" defaultValue="9080"/>
+<variable name="default.https.port" defaultValue="9443"/>
+
 <httpEndpoint host="*" httpPort="${default.http.port}" httpsPort="${default.https.port}"
     id="defaultHttpEndpoint"/>
 
-<webApplication location="io.openliberty.guides.cors.war" contextRoot="/"/>
+<webApplication location="guide-cors.war" contextRoot="/"/>
 
 <!-- tag::simple-config[] -->
 <cors domain="/configurations/simple"
@@ -25,5 +28,4 @@
     allowedHeaders="MyOwnHeader1, MyOwnHeader2"
     maxAge="10"/>
 <!-- end::preflight-config[] -->
-
 </server>
