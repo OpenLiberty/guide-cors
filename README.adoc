@@ -137,7 +137,7 @@ tested with a simple CORS request.
 
 The Open Liberty server was started in development mode at the beginning of the guide and all the changes were automatically picked up.
 
-Now we will test the simple CORS configuration that you added. Add the [hotspot=testSimpleCorsRequest file=1]`testSimpleCorsRequest` method to the `CorsIT` class.
+Now, test the simple CORS configuration that you added. Add the [hotspot=testSimpleCorsRequest file=1]`testSimpleCorsRequest` method to the `CorsIT` class.
 
 [role="code_command hotspot file=1", subs="quotes"]
 ----
@@ -224,7 +224,7 @@ The preflight CORS configuration has different values than the simple CORS confi
 | [hotspot=27 file=0]`allowCredentials`| A boolean that indicates whether the user credentials can be included in the request. The value is set to `true`.
 |===
 
-The follow attributes were added:
+The following attributes were added:
 
 * [hotspot=28 file=0]`allowedHeaders`: Headers that a client can use in requests. Set the value to `MyOwnHeader1, MyOwnHeader2`.
 * [hotspot=29 file=0]`maxAge`: The number of seconds that a client can cache a response to a preflight request. Set the value to `10`.
