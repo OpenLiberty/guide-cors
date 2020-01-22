@@ -255,7 +255,7 @@ Expect the following response headers and values if the preflight CORS request i
 
 |===
 | *Response Header* | *Response Value*
-| Access-Control-Allow-Max-Age | The expected value is `10`. Indicates that the preflight request can be cached within `10` seconds.
+| Access-Control-Max-Age | The expected value is `10`. Indicates that the preflight request can be cached within `10` seconds.
 | Access-Control-Allow-Origin | The expected value is `anywebsiteyoulike.com`. Indicates whether a resource can be shared based on the returning value of the Origin request header `anywebsiteyoulike.com`.
 | Access-Control-Allow-Methods | The expected value is `OPTIONS, DELETE`. Indicates that HTTP OPTIONS and DELETE methods can be used in the actual request.
 | Access-Control-Allow-Credentials | The expected value is `true`. Indicates that the user credentials can be included in the request.
@@ -276,7 +276,7 @@ Response headers with their values from the endpoint:
 ```
 --- Preflight CORS Request ---
 Header null = [HTTP/1.1 200 OK]
-Header Access-Control-Allow-Max-Age = [10]
+Header Access-Control-Max-Age = [10]
 Header Access-Control-Allow-Origin = [anywebsiteyoulike.com]
 Header Access-Control-Allow-Methods = [OPTIONS, DELETE]
 Header Access-Control-Allow-Credentials = [true]
