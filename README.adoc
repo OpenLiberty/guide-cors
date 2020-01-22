@@ -276,11 +276,11 @@ Response headers with their values from the endpoint:
 ```
 --- Preflight CORS Request ---
 Header null = [HTTP/1.1 200 OK]
-Header Access-Control-Max-Age = [10]
 Header Access-Control-Allow-Origin = [anywebsiteyoulike.com]
 Header Access-Control-Allow-Methods = [OPTIONS, DELETE]
 Header Access-Control-Allow-Credentials = [true]
 Header Content-Length = [0]
+Header Access-Control-Max-Age = [10]
 Header Date = [Thu, 21 Mar 2019 18:21:13 GMT]
 Header Content-Language = [en-CA]
 Header Access-Control-Allow-Headers = [MyOwnHeader1, MyOwnHeader2]
