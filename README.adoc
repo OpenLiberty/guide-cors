@@ -14,8 +14,8 @@
 :page-related-guides: ['rest-intro', 'rest-client-java']
 :common-includes: https://raw.githubusercontent.com/OpenLiberty/guides-common/master/
 :source-highlighter: prettify
-:page-seo-title: Enabling Cross-Origin Resource Sharing (CORS) in a REST service
-:page-seo-description: A tutorial on how to add two server configurations to enable Cross-Origin Resource Sharing (CORS) and write tests to validate that the CORS configurations work.
+:page-seo-title: Enabling Cross-Origin Resource Sharing (CORS) in a RESTful Java microservice
+:page-seo-description: A tutorial with examples on how to add server configurations to enable Cross-Origin Resource Sharing (CORS) in a Java microservice. Learn how to send simple and preflight CORS requests and inspect the HTTP request and response headers.
 :guide-author: Open Liberty
 = Enabling Cross-Origin Resource Sharing (CORS)
 
