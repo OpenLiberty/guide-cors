@@ -123,6 +123,7 @@ include::finish/src/main/liberty/config/server.xml[]
 
 The CORS configuration contains the following attributes:
 
+[options="header"]
 |===
 | *Configuration Attribute* | *Value*
 |[hotspot=16 file=0]`domain` | The endpoint to be configured for CORS requests. The value is set to `/configurations/simple`.
@@ -155,6 +156,7 @@ The [hotspot=testSimpleCorsRequest file=1]`testSimpleCorsRequest` test simulates
 
 The request is a [hotspot=get file=1]`GET` HTTP request with the following header:
 
+[options="header"]
 |===
 | *Request Header* | *Request Value*
 | Origin | The value is set to `openliberty.io`. Indicates that the request originates from `openliberty.io`.
@@ -162,6 +164,7 @@ The request is a [hotspot=get file=1]`GET` HTTP request with the following heade
 
 Expect the following response headers and values if the simple CORS request is successful, and the server is correctly configured:
 
+[options="header"]
 |===
 | *Response Header* | *Response Value*
 | Access-Control-Allow-Origin | The expected value is `openliberty.io`. Indicates whether a resource can be shared based on the returning value of the Origin request header `openliberty.io`.
@@ -216,6 +219,7 @@ Add another CORS configuration in the `server.xml` file:
 
 The preflight CORS configuration has different values than the simple CORS configuration.
 
+[options="header"]
 |===
 | *Configuration Attribute* | *Value*
 | [hotspot=24 file=0]`domain`|The value is set to `/configurations/preflight` because the `domain` is a different endpoint.
@@ -244,6 +248,7 @@ The [hotspot=testPreflightCorsRequest file=1]`testPreflightCorsRequest` test sim
 
 The request is an [hotspot=options file=1]`OPTIONS` HTTP request with the following headers:
 
+[options="header"]
 |===
 | *Request Header* | *Request Value*
 | Origin | The value is set to `anywebsiteyoulike.com`. Indicates that the request originates from `anywebsiteyoulike.com`.
@@ -253,6 +258,7 @@ The request is an [hotspot=options file=1]`OPTIONS` HTTP request with the follow
 
 Expect the following response headers and values if the preflight CORS request is successful, and the server is correctly configured:
 
+[options="header"]
 |===
 | *Response Header* | *Response Value*
 | Access-Control-Max-Age | The expected value is `10`. Indicates that the preflight request can be cached within `10` seconds.
