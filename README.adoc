@@ -169,7 +169,7 @@ Expect the following response headers and values if the simple CORS request is s
 
 Since you started Open Liberty in development mode at the start of the guide, press the `enter/return` key to run the tests.
 
-If the [hotspot=testSimpleCorsRequest file=1]`testSimpleCorsRequest` test passes, it will print the response headers, with their values, from the endpoint. The
+If the [hotspot=testSimpleCorsRequest file=1]`testSimpleCorsRequest` test passes it will print the response headers with their values, from the endpoint. The
 `/configurations/simple` endpoint now accepts simple CORS requests.
 
 Response headers with their values from the endpoint:
@@ -269,7 +269,7 @@ because the server is configured to allow all origins, and the request came with
 
 Since you started Open Liberty in development mode at the start of the guide, press the `enter/return` key to run the tests.
 
-If the [hotspot=testPreflightCorsRequest file=1]`testPreflightCorsRequest` test passes, it will print the response headers, with their values, from the endpoint.
+If the [hotspot=testPreflightCorsRequest file=1]`testPreflightCorsRequest` test passes, it will print the response headers with their values from the endpoint.
 The `/configurations/preflight` endpoint now allows preflight CORS requests.
 
 Response headers with their values from the endpoint:
