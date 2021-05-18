@@ -90,7 +90,7 @@ include::{common-includes}/gitclone.adoc[]
 Navigate to the `start` directory to begin.
 
 [role='command']
-include::{common-includes}/devmode-start.adoc[]
+include::{common-includes}/devmode-lmp33-start.adoc[]
 
 You will use a REST service that is already provided for you to test your CORS configurations.
 You can find this service in the `src/main/java/io/openliberty/guides/cors/` directory.
