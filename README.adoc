@@ -134,7 +134,8 @@ tested with a simple CORS request.
 
 The Open Liberty server was started in development mode at the beginning of the guide and all the changes were automatically picked up.
 
-Now, test the simple CORS configuration that you added. Add the [hotspot=testSimpleCorsRequest file=1]`testSimpleCorsRequest` method to the `CorsIT` class.
+Now, test the simple CORS configuration that you added. 
+Add the [hotspot=testSimpleCorsRequest file=1]`testSimpleCorsRequest` method to the `CorsIT` class.
 
 [role="code_command hotspot file=1", subs="quotes"]
 ----
@@ -168,10 +169,12 @@ Expect the following response headers and values if the simple CORS request is s
 | Access-Control-Expose-Headers |  The expected value is `MyHeader`. Indicates that the header `MyHeader` is safe to expose.
 |===
 
-Since you started Open Liberty in development mode at the start of the guide, press the `enter/return` key to run the tests.
+Since you started Open Liberty in development mode at the start of the guide, 
+press the `enter/return` key to run the tests.
 
-If the [hotspot=testSimpleCorsRequest file=1]`testSimpleCorsRequest` test passes, the response headers with their values from the endpoint are printed. The
-`/configurations/simple` endpoint now accepts simple CORS requests.
+If the [hotspot=testSimpleCorsRequest file=1]`testSimpleCorsRequest` test passes, 
+the response headers with their values from the endpoint are printed. 
+The `/configurations/simple` endpoint now accepts simple CORS requests.
 
 Response headers with their values from the endpoint:
 [role='no_copy']
@@ -240,7 +243,9 @@ Add another test to the [hotspot file=1]`CorsIT.java` file to test the preflight
 `src/test/java/it/io/openliberty/guides/cors/CorsIT.java`
 ----
 
-The [hotspot=testPreflightCorsRequest file=1]`testPreflightCorsRequest` test simulates a client sending a preflight CORS request. It first sends the request to the `/configurations/preflight` endpoint, and then it checks for a valid response and expected headers. Lastly, it prints the response headers for you to inspect.
+The [hotspot=testPreflightCorsRequest file=1]`testPreflightCorsRequest` test simulates a client sending a preflight CORS request. 
+It first sends the request to the `/configurations/preflight` endpoint, and then it checks for a valid response and expected headers. 
+Lastly, it prints the response headers for you to inspect.
 
 The request is an [hotspot=options file=1]`OPTIONS` HTTP request with the following headers:
 
