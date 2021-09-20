@@ -119,9 +119,9 @@ include::finish/src/main/liberty/config/server.xml[]
 
 The CORS configuration contains the following attributes:
 
+[options="header"]
 |===
 | *Configuration Attribute* | *Value*
-
 |[hotspot=16 file=0]`domain` | The endpoint to be configured for CORS requests. The value is set to `/configurations/simple`.
 |[hotspot=17 file=0]`allowedOrigins` | Origins that are allowed to access the endpoint. The value is set to `openliberty.io`.
 |[hotspot=18 file=0]`allowedMethods` | HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `GET`.
