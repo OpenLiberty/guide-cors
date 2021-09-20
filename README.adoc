@@ -42,11 +42,11 @@ technique for consuming an API served from an origin different than yours.
 CORS is useful for requesting different kinds of data from websites that aren't your own. 
 These types of data might include images, videos, scripts, stylesheets, iFrames, or web fonts.
 
-However, you cannot request resources from another website domain without proper permission. In JavaScript, cross-origin requests with an `XMLHttpRequest` API and Ajax cannot happen unless CORS is enabled on the server that receives the request. Otherwise, same-origin security policy prevents the requests. For example, a web page that is served from the `\http://aboutcors.com` server sends a request to get data to the
-`\http://openliberty.io` server. Because of security concerns, browsers block the server response unless
+However, you cannot request resources from another website domain without proper permission. In JavaScript, cross-origin requests with an `XMLHttpRequest` API and Ajax cannot happen unless CORS is enabled on the server that receives the request. Otherwise, same-origin security policy prevents the requests. For example, a web page that is served from the `+http://aboutcors.com+` server sends a request to get data to the
+`+http://openliberty.io+` server. Because of security concerns, browsers block the server response unless
 the server adds HTTP response headers to allow the web page to consume the data.
 
-Different ports and different protocols also trigger CORS. For example, the `\http://abc.xyz:1234` domain is considered to be different from the `\https://abc.xyz:4321` domain.
+Different ports and different protocols also trigger CORS. For example, the `+http://abc.xyz:1234+` domain is considered to be different from the `+https://abc.xyz:4321+` domain.
 
 Open Liberty has built-in support for CORS that gives you an easy and powerful way to configure the
 runtime to handle CORS requests without the need to write Java code.
