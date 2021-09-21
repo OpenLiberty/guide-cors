@@ -119,19 +119,28 @@ include::finish/src/main/liberty/config/server.xml[]
 
 The CORS configuration contains the following attributes:
 
+ifndef::cloud-hosted[]
+[options="header"]
 |===
 | *Configuration Attribute* | *Value*
-
 |[hotspot=16 file=0]`domain` | The endpoint to be configured for CORS requests. The value is set to `/configurations/simple`.
-
 |[hotspot=17 file=0]`allowedOrigins` | Origins that are allowed to access the endpoint. The value is set to `openliberty.io`.
-
 |[hotspot=18 file=0]`allowedMethods` | HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `GET`.
-
 |[hotspot=19 file=0]`allowCredentials` | A boolean that indicates whether the user credentials can be included in the request. The value is set to `true`.
-
 |[hotspot=20 file=0]`exposeHeaders` | Headers that are safe to expose to clients. The value is set to `MyHeader`.
 |===
+endif::[]
+
+ifdef::cloud-hosted[]
+|===
+| *Configuration Attribute* | *Value*
+|[hotspot=16 file=0]`domain` | The endpoint to be configured for CORS requests. The value is set to `/configurations/simple`.
+|[hotspot=17 file=0]`allowedOrigins` | Origins that are allowed to access the endpoint. The value is set to `openliberty.io`.
+|[hotspot=18 file=0]`allowedMethods` | HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `GET`.
+|[hotspot=19 file=0]`allowCredentials` | A boolean that indicates whether the user credentials can be included in the request. The value is set to `true`.
+|[hotspot=20 file=0]`exposeHeaders` | Headers that are safe to expose to clients. The value is set to `MyHeader`.
+|===
+endif::[]
 
 Save the changes to the [hotspot file=0]`server.xml` file. The `/configurations/simple` endpoint is now ready to be
 tested with a simple CORS request.
@@ -157,23 +166,41 @@ The [hotspot=testSimpleCorsRequest file=1]`testSimpleCorsRequest` test simulates
 
 The request is a [hotspot=get file=1]`GET` HTTP request with the following header:
 
+ifndef::cloud-hosted[]
+[options="header"]
 |===
 | *Request Header* | *Request Value*
-
 | Origin | The value is set to `openliberty.io`. Indicates that the request originates from `openliberty.io`.
 |===
+endif::[]
+
+ifdef::cloud-hosted[]
+|===
+| *Request Header* | *Request Value*
+| Origin | The value is set to `openliberty.io`. Indicates that the request originates from `openliberty.io`.
+|===
+endif::[]
 
 Expect the following response headers and values if the simple CORS request is successful, and the server is correctly configured:
 
+ifndef::cloud-hosted[]
+[options="header"]
 |===
 | *Response Header* | *Response Value*
-
 | Access-Control-Allow-Origin | The expected value is `openliberty.io`. Indicates whether a resource can be shared based on the returning value of the Origin request header `openliberty.io`.
-
 | Access-Control-Allow-Credentials | The expected value is `true`. Indicates that the user credentials can be included in the request.
-
 | Access-Control-Expose-Headers |  The expected value is `MyHeader`. Indicates that the header `MyHeader` is safe to expose.
 |===
+endif::[]
+
+ifdef::cloud-hosted[]
+|===
+| *Response Header* | *Response Value*
+| Access-Control-Allow-Origin | The expected value is `openliberty.io`. Indicates whether a resource can be shared based on the returning value of the Origin request header `openliberty.io`.
+| Access-Control-Allow-Credentials | The expected value is `true`. Indicates that the user credentials can be included in the request.
+| Access-Control-Expose-Headers |  The expected value is `MyHeader`. Indicates that the header `MyHeader` is safe to expose.
+|===
+endif::[]
 
 Since you started Open Liberty in development mode at the start of the guide, 
 press the `enter/return` key to run the tests.
@@ -224,17 +251,26 @@ Add another CORS configuration in the `server.xml` file:
 
 The preflight CORS configuration has different values than the simple CORS configuration.
 
+ifndef::cloud-hosted[]
+[options="header"]
 |===
 | *Configuration Attribute* | *Value*
-
 | [hotspot=24 file=0]`domain`|The value is set to `/configurations/preflight` because the `domain` is a different endpoint.
-
 | [hotspot=25 file=0]`allowedOrigins`| Origins that are allowed to access the endpoint. The value is set to an asterisk (*) to allow requests from all origins.
-
 | [hotspot=26 file=0]`allowedMethods`| HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `OPTIONS, DELETE`.
-
 | [hotspot=27 file=0]`allowCredentials`| A boolean that indicates whether the user credentials can be included in the request. The value is set to `true`.
 |===
+endif::[]
+
+ifdef::cloud-hosted[]
+|===
+| *Configuration Attribute* | *Value*
+| [hotspot=24 file=0]`domain`|The value is set to `/configurations/preflight` because the `domain` is a different endpoint.
+| [hotspot=25 file=0]`allowedOrigins`| Origins that are allowed to access the endpoint. The value is set to an asterisk (*) to allow requests from all origins.
+| [hotspot=26 file=0]`allowedMethods`| HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `OPTIONS, DELETE`.
+| [hotspot=27 file=0]`allowCredentials`| A boolean that indicates whether the user credentials can be included in the request. The value is set to `true`.
+|===
+endif::[]
 
 The following attributes were added:
 
@@ -258,32 +294,49 @@ Lastly, it prints the response headers for you to inspect.
 
 The request is an [hotspot=options file=1]`OPTIONS` HTTP request with the following headers:
 
+ifndef::cloud-hosted[]
+[options="header"]
 |===
-
 | *Request Header* | *Request Value*
-
 | Origin | The value is set to `anywebsiteyoulike.com`. Indicates that the request originates from `anywebsiteyoulike.com`.
-
 | Access-Control-Request-Method | The value is set to `DELETE`. Indicates that the HTTP DELETE method will be used in the actual request.
-
 | Access-Control-Request-Headers | The value is set to `MyOwnHeader2`. Indicates the header `MyOwnHeader2` will be used in the actual request.
 |===
+endif::[]
+
+ifdef::cloud-hosted[]
+|===
+| *Request Header* | *Request Value*
+| Origin | The value is set to `anywebsiteyoulike.com`. Indicates that the request originates from `anywebsiteyoulike.com`.
+| Access-Control-Request-Method | The value is set to `DELETE`. Indicates that the HTTP DELETE method will be used in the actual request.
+| Access-Control-Request-Headers | The value is set to `MyOwnHeader2`. Indicates the header `MyOwnHeader2` will be used in the actual request.
+|===
+endif::[]
 
 Expect the following response headers and values if the preflight CORS request is successful, and the server is correctly configured:
 
+ifndef::cloud-hosted[]
+[options="header"]
 |===
 | *Response Header* | *Response Value*
-
 | Access-Control-Max-Age | The expected value is `10`. Indicates that the preflight request can be cached within `10` seconds.
-
 | Access-Control-Allow-Origin | The expected value is `anywebsiteyoulike.com`. Indicates whether a resource can be shared based on the returning value of the Origin request header `anywebsiteyoulike.com`.
-
 | Access-Control-Allow-Methods | The expected value is `OPTIONS, DELETE`. Indicates that HTTP OPTIONS and DELETE methods can be used in the actual request.
-
 | Access-Control-Allow-Credentials | The expected value is `true`. Indicates that the user credentials can be included in the request.
-
 | Access-Control-Allow-Headers | The expected value is `MyOwnHeader1, MyOwnHeader2`. Indicates that the header `MyOwnHeader1` and `MyOwnHeader2` are safe to expose.
 |===
+endif::[]
+
+ifdef::cloud-hosted[]
+|===
+| *Response Header* | *Response Value*
+| Access-Control-Max-Age | The expected value is `10`. Indicates that the preflight request can be cached within `10` seconds.
+| Access-Control-Allow-Origin | The expected value is `anywebsiteyoulike.com`. Indicates whether a resource can be shared based on the returning value of the Origin request header `anywebsiteyoulike.com`.
+| Access-Control-Allow-Methods | The expected value is `OPTIONS, DELETE`. Indicates that HTTP OPTIONS and DELETE methods can be used in the actual request.
+| Access-Control-Allow-Credentials | The expected value is `true`. Indicates that the user credentials can be included in the request.
+| Access-Control-Allow-Headers | The expected value is `MyOwnHeader1, MyOwnHeader2`. Indicates that the header `MyOwnHeader1` and `MyOwnHeader2` are safe to expose.
+|===
+endif::[]
 
 The `Access-Control-Allow-Origin` header has a value of `anywebsiteyoulike.com`
 because the server is configured to allow all origins, and the request came with an origin of
