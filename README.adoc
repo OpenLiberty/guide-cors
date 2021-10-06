@@ -169,8 +169,7 @@ Expect the following response headers and values if the simple CORS request is s
 | Access-Control-Expose-Headers |  The expected value is `MyHeader`. Indicates that the header `MyHeader` is safe to expose.
 |===
 
-Since you started Open Liberty in development mode at the start of the guide, 
-press the `enter/return` key to run the tests.
+include::{common-includes}/devmode-test.adoc[]
 
 If the [hotspot=testSimpleCorsRequest file=1]`testSimpleCorsRequest` test passes, 
 the response headers with their values from the endpoint are printed. 
