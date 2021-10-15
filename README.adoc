@@ -88,6 +88,12 @@ include::{common-includes}/gitclone.adoc[]
 
 == Enabling CORS
 Navigate to the `start` directory to begin.
+ifdef::cloud-hosted[]
+```
+cd /home/project/guide-cors/start
+```
+{: codeblock}
+endif::[]
 
 [role='command']
 include::{common-includes}/devmode-lmp33-start.adoc[]
