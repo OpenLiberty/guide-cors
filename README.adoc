@@ -88,6 +88,7 @@ include::{common-includes}/gitclone.adoc[]
 
 == Enabling CORS
 Navigate to the `start` directory to begin.
+// cloud hosted instructions
 ifdef::cloud-hosted[]
 ```
 cd /home/project/guide-cors/start
