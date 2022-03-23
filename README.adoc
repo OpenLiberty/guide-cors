@@ -182,17 +182,6 @@ Header X-Powered-By = [Servlet/4.0]
 // =================================================================================================
 
 === Enabling a preflight CORS configuration
-server.xml
-[source, xml, linenums, role='code_column']
-----
-include::finish/src/main/liberty/config/server.xml[]
-----
-
-CorsIT.java
-[source, java, linenums, role='code_column hide_tags=copyright']
-----
-include::finish/src/test/java/it/io/openliberty/guides/cors/CorsIT.java[]
-----
 
 Configure the server to allow the `/configurations/preflight` endpoint to accept a [hotspot=preflight-config file=0]`preflight` CORS request. Add another CORS configuration in the `server.xml` file:
 
@@ -200,6 +189,12 @@ Configure the server to allow the `/configurations/preflight` endpoint to accept
 ----
 #Replace the server configuration file.#
 `src/main/liberty/config/server.xml`
+----
+
+server.xml
+[source, xml, linenums, role='code_column']
+----
+include::finish/src/main/liberty/config/server.xml[]
 ----
 
 The preflight CORS configuration has different values than the simple CORS configuration.
@@ -226,6 +221,12 @@ Add another test to the [hotspot file=1]`CorsIT.java` file to test the preflight
 ----
 #Replace the `CorsIT` class.#
 `src/test/java/it/io/openliberty/guides/cors/CorsIT.java`
+----
+
+CorsIT.java
+[source, java, linenums, role='code_column hide_tags=copyright']
+----
+include::finish/src/test/java/it/io/openliberty/guides/cors/CorsIT.java[]
 ----
 
 The [hotspot=testPreflightCorsRequest file=1]`testPreflightCorsRequest` test simulates a client sending a preflight CORS request. It first sends the request to the `/configurations/preflight` endpoint, and then it checks for a valid response and expected headers. Lastly, it prints the response headers for you to inspect.
