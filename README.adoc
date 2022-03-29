@@ -78,10 +78,9 @@ include::{common-includes}/gitclone.adoc[]
 Navigate to the `start` directory to begin.
 // cloud hosted instructions
 ifdef::cloud-hosted[]
-```
+```bash
 cd /home/project/guide-cors/start
 ```
-{: codeblock}
 endif::[]
 
 [role='command']
