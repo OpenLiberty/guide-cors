@@ -22,7 +22,7 @@
         <dependency>
             <groupId>jakarta.platform</groupId>
             <artifactId>jakarta.jakartaee-api</artifactId>
-            <version>8.0.0</version>
+            <version>9.1.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -30,7 +30,7 @@
             <!-- tag::microprofile[] -->
             <artifactId>microprofile</artifactId>
             <!-- end::microprofile[] -->
-            <version>4.1</version>
+            <version>5.0</version>
             <type>pom</type>
             <scope>provided</scope>
         </dependency>
@@ -38,7 +38,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>5.8.1</version>
+            <version>5.8.2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
