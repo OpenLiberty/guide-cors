@@ -1,4 +1,4 @@
-// Copyright (c) 2017, 2022 IBM Corporation and others.
+// Copyright (c) 2017, 2023 IBM Corporation and others.
 // Licensed under Creative Commons Attribution-NoDerivatives
 // 4.0 International (CC BY-ND 4.0)
 //   https://creativecommons.org/licenses/by-nd/4.0/
@@ -52,7 +52,7 @@ Familiarize yourself with two kinds of CORS requests to understand the attribute
 
 According to the CORS specification, an HTTP request is a simple CORS request if the request method is `GET`, `HEAD`, or `POST`. The header fields are any one of the `Accept`, `Accept-Language`, `Content-Language`, or `Content-Type` headers. The `Content-Type` header has a value of `application/x-www-form-urlencoded`, `multipart/form-data`, or `text/plain`.
 
-When clients, such as browsers, send simple CORS requests to servers on different domains, the clients include an `Origin` header with the client host name as the value. If the server allows the origin, the server includes an `Access-Control-Allow-Origin` header with a list of allowed origins or an asterisk (*) in the response back to the client. The asterisk indicates that all origins are allowed to access the endpoint on the server.
+When clients, such as browsers, send simple CORS requests to servers on different domains, the clients include an `Origin` header with the original (referring)  host name as the value. If the server allows the origin, the server includes an `Access-Control-Allow-Origin` header with a list of allowed origins or an asterisk (*) in the response back to the client. The asterisk indicates that all origins are allowed to access the endpoint on the server.
 
 ==== Preflight CORS request
 
