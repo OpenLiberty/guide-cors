@@ -120,6 +120,8 @@ The CORS configuration contains the following attributes:
 |[hotspot=20 file=0]`exposeHeaders` | Headers that are safe to expose to clients. The value is set to `MyHeader`.
 |===
 
+If you want to learn more configuration, see the https://www.openliberty.io/docs/latest/reference/config/cors.html[Configuration for the Cross-Origin Resource Sharing documentation^] 
+
 Save the changes to the [hotspot file=0]`server.xml` file. The `/configurations/simple` endpoint is now ready to be tested with a simple CORS request.
 
 The Open Liberty server was started in development mode at the beginning of the guide and all the changes were automatically picked up.
