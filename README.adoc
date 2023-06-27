@@ -124,7 +124,7 @@ For more information about these and other CORS attributes, see the https://www.
 
 Save the changes to the [hotspot file=0]`server.xml` file. The `/configurations/simple` endpoint is now ready to be tested with a simple CORS request.
 
-The Open Liberty server was started in development mode at the beginning of the guide and all the changes were automatically picked up.
+The Open Liberty server was started in dev mode at the beginning of the guide and all the changes were automatically picked up.
 
 Now, test the simple CORS configuration that you added. Add the [hotspot=testSimpleCorsRequest file=1]`testSimpleCorsRequest` method to the `CorsIT` class.
 
