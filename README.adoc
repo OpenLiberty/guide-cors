@@ -99,7 +99,7 @@ Configure the Liberty to allow the `/configurations/simple` endpoint to accept a
 
 [role="code_command hotspot file=0", subs="quotes"]
 ----
-#Replace the Liberty server.xml configuration file.#
+#Replace the Liberty `server.xml` configuration file.#
 `src/main/liberty/config/server.xml`
 ----
 server.xml
@@ -188,7 +188,7 @@ Configure the Liberty to allow the `/configurations/preflight` endpoint to accep
 
 [role="code_command hotspot file=0", subs="quotes"]
 ----
-#Replace the Liberty server.xml configuration file.#
+#Replace the Liberty `server.xml` configuration file.#
 `src/main/liberty/config/server.xml`
 ----
 
