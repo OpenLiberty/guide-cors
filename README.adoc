@@ -279,7 +279,7 @@ Header X-Powered-By = [Servlet/4.0]
 You can modify the Liberty configuration and the test code to experiment with the various CORS configuration attributes.
 
 [role='command']
-include::{common-includes}/devmode-quit.adoc[]
+include::{common-includes}/devmode-quit-ctrlc.adoc[]
 
 // =================================================================================================
 // Congratulations! You're done!
