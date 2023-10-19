@@ -15,7 +15,7 @@
 
 <!-- tag::simple-config[] -->
 <cors domain="/configurations/simple"
-    allowedOrigins="openliberty.io"
+    allowedOrigins="http://openliberty.io"
     allowedMethods="GET"
     allowCredentials="true"
     exposeHeaders="MyHeader"/>
