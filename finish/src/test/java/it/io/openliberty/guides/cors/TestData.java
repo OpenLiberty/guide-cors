@@ -1,4 +1,4 @@
-// tag::comment[]
+ // tag::copyright[]
 /*******************************************************************************
  * Copyright (c) 2017 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -9,15 +9,15 @@
  * Contributors:
  *     IBM Corporation - Initial implementation
  *******************************************************************************/
-// end::comment[]
-package it.io.openliberty.guides.cors;
+// end::copyright[]
+ package it.io.openliberty.guides.cors;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class TestData {
 
-    public static String REQUEST_HEADER_ORIGIN = "Origin";
+    public static String REQUEST_HEADER_ORIGIN = "origin";
     public static String REQUEST_HEADER_ACCESS_CONTROL_REQUEST_METHOD = "Access-Control-Request-Method";
     public static String REQUEST_HEADER_ACCESS_CONTROL_REQUEST_HEADERS = "Access-Control-Request-Headers";
 
