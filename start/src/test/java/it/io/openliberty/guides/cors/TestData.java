@@ -35,9 +35,9 @@ public class TestData {
     public static Map<String, String> preflightResponseHeaders = new HashMap<String, String>();
 
     static {
-        simpleRequestHeaders.put(REQUEST_HEADER_ORIGIN, "http://openliberty.io");
+        simpleRequestHeaders.put(REQUEST_HEADER_ORIGIN, "openliberty.io");
 
-        simpleResponseHeaders.put(RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN, "http://openliberty.io");
+        simpleResponseHeaders.put(RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN, "openliberty.io");
         simpleResponseHeaders.put(RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_CREDENTIALS, "true");
         simpleResponseHeaders.put(RESPONSE_HEADER_ACCESS_CONTROL_EXPOSE_HEADERS, "MyHeader");
 
