@@ -1,13 +1,12 @@
 // tag::copyright[]
 /*******************************************************************************
- * Copyright (c) 2017 IBM Corporation and others.
+ * Copyright (c) 2017, 2019 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-2.0/
  *
- * Contributors:
- *     IBM Corporation - Initial implementation
+ * SPDX-License-Identifier: EPL-2.0
  *******************************************************************************/
 // end::copyright[]
 package it.io.openliberty.guides.cors;
@@ -34,15 +33,15 @@ public class TestData {
     public TestData() {
     
         REQUEST_HEADER_ORIGIN = "Origin";
-        REQUEST_HEADER_ACCESS_CONTROL_REQUEST_METHOD="Access-Control-Request-Method";
-        REQUEST_HEADER_ACCESS_CONTROL_REQUEST_HEADERS="Access-Control-Request-Headers";
+        REQUEST_HEADER_ACCESS_CONTROL_REQUEST_METHOD = "Access-Control-Request-Method";
+        REQUEST_HEADER_ACCESS_CONTROL_REQUEST_HEADERS = "Access-Control-Request-Headers";
 
-        RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN="Access-Control-Allow-Origin";
-        RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_CREDENTIALS="Access-Control-Allow-Credentials";
-        RESPONSE_HEADER_ACCESS_CONTROL_EXPOSE_HEADERS="Access-Control-Expose-Headers";
-        RESPONSE_HEADER_ACCESS_CONTROL_MAX_AGE="Access-Control-Max-Age";
-        RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_METHODS="Access-Control-Allow-Methods";
-        RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_HEADERS="Access-Control-Allow-Headers";
+        RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN = "Access-Control-Allow-Origin";
+        RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_CREDENTIALS = "Access-Control-Allow-Credentials";
+        RESPONSE_HEADER_ACCESS_CONTROL_EXPOSE_HEADERS = "Access-Control-Expose-Headers";
+        RESPONSE_HEADER_ACCESS_CONTROL_MAX_AGE = "Access-Control-Max-Age";
+        RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_METHODS = "Access-Control-Allow-Methods";
+        RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_HEADERS = "Access-Control-Allow-Headers";
 
         simpleRequestHeaders = new HashMap<String, String>();
         simpleResponseHeaders = new HashMap<String, String>();
