@@ -70,7 +70,7 @@ public class CorsIT {
         });
     }
 
-    public static void printResponseHeaders(HttpURLConnection connection,
+    public final void printResponseHeaders(HttpURLConnection connection,
                     String label) {
         System.out.println("--- " + label + " ---");
         Map<String, java.util.List<String>> map = connection.getHeaderFields();
