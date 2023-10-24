@@ -11,7 +11,7 @@
 // end::copyright[]
 package it.io.openliberty.guides.cors;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
