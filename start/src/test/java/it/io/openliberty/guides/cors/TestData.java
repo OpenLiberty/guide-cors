@@ -4,7 +4,7 @@
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+ * http://www.eclipse.org/legal/epl-2.0/
  *
  * Contributors:
  *     IBM Corporation - Initial implementation
@@ -17,7 +17,7 @@ import java.util.Map;
 
 public class TestData {
 
-    public final String REQUEST_HEADER_ORIGIN; 
+    public final String REQUEST_HEADER_ORIGIN;
     public final String REQUEST_HEADER_ACCESS_CONTROL_REQUEST_METHOD;
     public final String REQUEST_HEADER_ACCESS_CONTROL_REQUEST_HEADERS;
     public final String RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN;
@@ -32,7 +32,7 @@ public class TestData {
     public final Map<String, String> preflightResponseHeaders;
 
     public TestData() {
-        
+    
     REQUEST_HEADER_ORIGIN = "Origin";
     REQUEST_HEADER_ACCESS_CONTROL_REQUEST_METHOD = "Access-Control-Request-Method";
     REQUEST_HEADER_ACCESS_CONTROL_REQUEST_HEADERS = "Access-Control-Request-Headers";
