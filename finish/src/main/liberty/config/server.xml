@@ -13,4 +13,20 @@
 
 <webApplication location="guide-cors.war" contextRoot="/"/>
 
+<!-- tag::simple-config[] -->
+<cors domain="/configurations/simple"
+    allowedOrigins="http://openliberty.io"
+    allowedMethods="GET"
+    allowCredentials="true"
+    exposeHeaders="MyHeader"/>
+<!-- end::simple-config[] -->
+
+<!-- tag::preflight-config[] -->
+<cors domain="/configurations/preflight"
+    allowedOrigins="*"
+    allowedMethods="OPTIONS, DELETE"
+    allowCredentials="true"
+    allowedHeaders="MyOwnHeader1, MyOwnHeader2"
+    maxAge="10"/>
+<!-- end::preflight-config[] -->
 </server>
