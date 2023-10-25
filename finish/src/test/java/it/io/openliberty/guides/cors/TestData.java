@@ -16,36 +16,36 @@ import java.util.Map;
 
 public class TestData {
 
-    public static final String REQUEST_HEADER_ORIGIN;
-    public static final String REQUEST_HEADER_ACCESS_CONTROL_REQUEST_METHOD;
-    public static final String REQUEST_HEADER_ACCESS_CONTROL_REQUEST_HEADERS;
-    public static final String RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN;
-    public static final String RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_CREDENTIALS;
-    public static final String RESPONSE_HEADER_ACCESS_CONTROL_EXPOSE_HEADERS;
-    public static final String RESPONSE_HEADER_ACCESS_CONTROL_MAX_AGE;
-    public static final String RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_METHODS;
-    public static final String RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_HEADERS;
+    public static  String request_header_origin;
+    public static  String request_header_access_control_request_method;
+    public static  String request_header_access_control_request_headers;
+    public static  String response_header_access_control_allow_origin;
+    public static  String response_header_access_control_allow_credentials;
+    public static  String response_header_access_control_expose_headers;
+    public static  String response_header_access_control_max_age;
+    public static  String response_header_access_control_allow_methods;
+    public static  String response_header_access_control_allow_headers;
     public static Map<String, String> simpleRequestHeaders;
     public static Map<String, String> simpleResponseHeaders;
     public static Map<String, String> preflightRequestHeaders;
     public static Map<String, String> preflightResponseHeaders;
 
-    public static final String PREFIX;
+    public static String prefix;
 
     public TestData() {
 
-        PREFIX = "Access-Control-";
+        prefix = "Access-Control-";
 
-        REQUEST_HEADER_ORIGIN = "Origin";
-        REQUEST_HEADER_ACCESS_CONTROL_REQUEST_METHOD = PREFIX + "Request-Method";
-        REQUEST_HEADER_ACCESS_CONTROL_REQUEST_HEADERS = PREFIX + "Request-Headers";
+        request_header_origin = "Origin";
+        request_header_access_control_request_method = prefix + "Request-Method";
+        request_header_access_control_request_headers = prefix + "Request-Headers";
 
-        RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN = PREFIX + "Allow-Origin";
-        RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_CREDENTIALS = PREFIX + "Allow-Credentials";
-        RESPONSE_HEADER_ACCESS_CONTROL_EXPOSE_HEADERS = PREFIX + "Expose-Headers";
-        RESPONSE_HEADER_ACCESS_CONTROL_MAX_AGE = PREFIX + "Max-Age";
-        RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_METHODS = PREFIX + "Allow-Methods";
-        RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_HEADERS = PREFIX + "Allow-Headers";
+        response_header_access_control_allow_origin = prefix + "Allow-Origin";
+        response_header_access_control_allow_credentials = prefix + "Allow-Credentials";
+        response_header_access_control_expose_headers = prefix + "Expose-Headers";
+        response_header_access_control_max_age = prefix + "Max-Age";
+        response_header_access_control_allow_methods = prefix + "Allow-Methods";
+        response_header_access_control_allow_headers = prefix + "Allow-Headers";
 
         simpleRequestHeaders = new HashMap<String, String>();
         simpleResponseHeaders = new HashMap<String, String>();
@@ -54,29 +54,29 @@ public class TestData {
         preflightResponseHeaders = new HashMap<String, String>();
 
 
-        simpleRequestHeaders.put(REQUEST_HEADER_ORIGIN, "http://openliberty.io");
+        simpleRequestHeaders.put(request_header_origin, "http://openliberty.io");
 
-        simpleResponseHeaders.put(RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN,
+        simpleResponseHeaders.put(response_header_access_control_allow_origin,
                 "http://openliberty.io");
-        simpleResponseHeaders.put(RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_CREDENTIALS,
+        simpleResponseHeaders.put(response_header_access_control_allow_credentials,
                 "true");
-        simpleResponseHeaders.put(RESPONSE_HEADER_ACCESS_CONTROL_EXPOSE_HEADERS,
+        simpleResponseHeaders.put(response_header_access_control_expose_headers,
                 "MyHeader");
 
-        preflightRequestHeaders.put(REQUEST_HEADER_ORIGIN, "anywebsiteyoulike.com");
-        preflightRequestHeaders.put(REQUEST_HEADER_ACCESS_CONTROL_REQUEST_METHOD,
+        preflightRequestHeaders.put(request_header_origin, "anywebsiteyoulike.com");
+        preflightRequestHeaders.put(request_header_access_control_request_method,
                 "DELETE");
-        preflightRequestHeaders.put(REQUEST_HEADER_ACCESS_CONTROL_REQUEST_HEADERS,
+        preflightRequestHeaders.put(request_header_access_control_request_headers,
                 "MyOwnHeader2");
 
-        preflightResponseHeaders.put(RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN,
+        preflightResponseHeaders.put(response_header_access_control_allow_origin,
                 "anywebsiteyoulike.com");
-        preflightResponseHeaders.put(RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_CREDENTIALS,
+        preflightResponseHeaders.put(response_header_access_control_allow_credentials,
                 "true");
-        preflightResponseHeaders.put(RESPONSE_HEADER_ACCESS_CONTROL_MAX_AGE, "10");
-        preflightResponseHeaders.put(RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_METHODS,
+        preflightResponseHeaders.put(response_header_access_control_max_age, "10");
+        preflightResponseHeaders.put(response_header_access_control_allow_methods,
                 "OPTIONS, DELETE");
-        preflightResponseHeaders.put(RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_HEADERS,
+        preflightResponseHeaders.put(response_header_access_control_allow_headers,
                 "MyOwnHeader1, MyOwnHeader2");
     }
 
