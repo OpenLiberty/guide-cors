@@ -61,7 +61,7 @@ public class CorsIT {
     }
     // end::testPreflightCorsRequest[]
 
-    public void checkCorsResponse(HttpURLConnection connection,
+    public void checkCorsResponse(HttpURLConnection connection, 
                     Map<String, String> expectedHeaders) throws IOException {
         assertEquals(200, connection.getResponseCode(), "Invalid HTTP response code");
         expectedHeaders.forEach((responseHeader, value) -> {
@@ -70,7 +70,7 @@ public class CorsIT {
         });
     }
 
-    public final void printResponseHeaders(HttpURLConnection connection,
+    public static void printResponseHeaders(HttpURLConnection connection,
                     String label) {
         System.out.println("--- " + label + " ---");
         Map<String, java.util.List<String>> map = connection.getHeaderFields();
