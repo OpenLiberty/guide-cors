@@ -36,7 +36,7 @@ public class TestData {
     static {
         simpleRequestHeaders.put(ORIGIN, "openliberty.io");
 
-        simpleResponseHeaders.put(ACCESS_CONTROL_ALLOW_ORIGIN, "openliberty.io");
+        simpleResponseHeaders.put(ACCESS_CONTROL_ALLOW_ORIGIN, "http://openliberty.io");
         simpleResponseHeaders.put(ACCESS_CONTROL_ALLOW_CREDENTIALS, "true");
         simpleResponseHeaders.put(ACCESS_CONTROL_EXPOSE_HEADERS, "MyHeader");
 
