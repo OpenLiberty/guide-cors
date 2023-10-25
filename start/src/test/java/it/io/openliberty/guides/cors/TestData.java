@@ -30,22 +30,22 @@ public class TestData {
     public static Map<String, String> preflightRequestHeaders;
     public static Map<String, String> preflightResponseHeaders;
 
-    public static final String prefix;
+    public static final String PREFIX;
 
     public TestData() {
 
-        prefix = "Access-Control-";
+        PREFIX = "Access-Control-";
 
         REQUEST_HEADER_ORIGIN = "Origin";
-        REQUEST_HEADER_ACCESS_CONTROL_REQUEST_METHOD = prefix + "Request-Method";
-        REQUEST_HEADER_ACCESS_CONTROL_REQUEST_HEADERS = prefix + "Request-Headers";
+        REQUEST_HEADER_ACCESS_CONTROL_REQUEST_METHOD = PREFIX + "Request-Method";
+        REQUEST_HEADER_ACCESS_CONTROL_REQUEST_HEADERS = PREFIX + "Request-Headers";
 
-        RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN = prefix + "Allow-Origin";
-        RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_CREDENTIALS = prefix + "Allow-Credentials";
-        RESPONSE_HEADER_ACCESS_CONTROL_EXPOSE_HEADERS = prefix + "Expose-Headers";
-        RESPONSE_HEADER_ACCESS_CONTROL_MAX_AGE = prefix + "Max-Age";
-        RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_METHODS = prefix + "Allow-Methods";
-        RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_HEADERS = prefix + "Allow-Headers";
+        RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN = PREFIX + "Allow-Origin";
+        RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_CREDENTIALS = PREFIX + "Allow-Credentials";
+        RESPONSE_HEADER_ACCESS_CONTROL_EXPOSE_HEADERS = PREFIX + "Expose-Headers";
+        RESPONSE_HEADER_ACCESS_CONTROL_MAX_AGE = PREFIX + "Max-Age";
+        RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_METHODS = PREFIX + "Allow-Methods";
+        RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_HEADERS = PREFIX + "Allow-Headers";
 
         simpleRequestHeaders = new HashMap<String, String>();
         simpleResponseHeaders = new HashMap<String, String>();
