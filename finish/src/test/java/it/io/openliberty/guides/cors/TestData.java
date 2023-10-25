@@ -25,10 +25,10 @@ public class TestData {
     public final String RESPONSE_HEADER_ACCESS_CONTROL_MAX_AGE;
     public final String RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_METHODS;
     public final String RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_HEADERS;
-    public final Map<String, String> simpleRequestHeaders;
-    public final Map<String, String> simpleResponseHeaders;
-    public final Map<String, String> preflightRequestHeaders;
-    public final Map<String, String> preflightResponseHeaders;
+    public static Map<String, String> simpleRequestHeaders;
+    public static Map<String, String> simpleResponseHeaders;
+    public static Map<String, String> preflightRequestHeaders;
+    public static Map<String, String> preflightResponseHeaders;
 
     public final String prefix;
 
