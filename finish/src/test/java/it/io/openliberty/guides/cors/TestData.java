@@ -25,12 +25,12 @@ public class TestData {
     public static final String RESPONSE_HEADER_ACCESS_CONTROL_MAX_AGE;
     public static final String RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_METHODS;
     public static final String RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_HEADERS;
-    public static final Map<String, String> simpleRequestHeaders;
-    public static final Map<String, String> simpleResponseHeaders;
-    public static final Map<String, String> preflightRequestHeaders;
-    public static final Map<String, String> preflightResponseHeaders;
+    public static Map<String, String> simpleRequestHeaders;
+    public static Map<String, String> simpleResponseHeaders;
+    public static Map<String, String> preflightRequestHeaders;
+    public static Map<String, String> preflightResponseHeaders;
 
-    public static final final String prefix;
+    public static final String prefix;
 
     public TestData() {
 
