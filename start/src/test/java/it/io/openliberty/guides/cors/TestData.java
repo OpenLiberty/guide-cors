@@ -16,21 +16,20 @@ import java.util.Map;
 
 public class TestData {
 
-    public final String REQUEST_HEADER_ORIGIN;
-    public final String REQUEST_HEADER_ACCESS_CONTROL_REQUEST_METHOD;
-    public final String REQUEST_HEADER_ACCESS_CONTROL_REQUEST_HEADERS;
-    public final String RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN;
-    public final String RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_CREDENTIALS;
-    public final String RESPONSE_HEADER_ACCESS_CONTROL_EXPOSE_HEADERS;
-    public final String RESPONSE_HEADER_ACCESS_CONTROL_MAX_AGE;
-    public final String RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_METHODS;
-    public final String RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_HEADERS;
-    public final Map<String, String> simpleRequestHeaders;
-    public final Map<String, String> simpleResponseHeaders;
-    public final Map<String, String> preflightRequestHeaders;
-    public final Map<String, String> preflightResponseHeaders;
+    public static final String REQUEST_HEADER_ORIGIN;
+    public static final String REQUEST_HEADER_ACCESS_CONTROL_REQUEST_METHOD;
+    public static final String REQUEST_HEADER_ACCESS_CONTROL_REQUEST_HEADERS;
+    public static final String RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN;
+    public static final String RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_CREDENTIALS;
+    public static final String RESPONSE_HEADER_ACCESS_CONTROL_EXPOSE_HEADERS;
+    public static final String RESPONSE_HEADER_ACCESS_CONTROL_MAX_AGE;
+    public static final String RESPONSE_HEADER_ACCESS_CONTROL_ALLOW_HEADERS;
+    public static final Map<String, String> simpleRequestHeaders;
+    public static final Map<String, String> simpleResponseHeaders;
+    public static final Map<String, String> preflightRequestHeaders;
+    public static final Map<String, String> preflightResponseHeaders;
 
-    public final String prefix;
+    public static final final String prefix;
 
     public TestData() {
 
