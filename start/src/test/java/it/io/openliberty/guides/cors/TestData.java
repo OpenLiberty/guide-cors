@@ -32,7 +32,7 @@ public class TestData {
 
     public static String prefix;
 
-    public TestData() {
+    static {
 
         prefix = "Access-Control-";
 
