@@ -16,7 +16,7 @@ import java.util.Map;
 
 public class TestData {
 
-    public static  String request_header_origin;
+    public static  String requestHeaderOrigin;
     public static  String request_header_access_control_request_method;
     public static  String request_header_access_control_request_headers;
     public static  String response_header_access_control_allow_origin;
@@ -36,7 +36,7 @@ public class TestData {
 
         prefix = "Access-Control-";
 
-        request_header_origin = "Origin";
+        requestHeaderOrigin = "Origin";
         request_header_access_control_request_method = prefix + "Request-Method";
         request_header_access_control_request_headers = prefix + "Request-Headers";
 
@@ -54,7 +54,7 @@ public class TestData {
         preflightResponseHeaders = new HashMap<String, String>();
 
 
-        simpleRequestHeaders.put(request_header_origin, "http://openliberty.io");
+        simpleRequestHeaders.put(requestHeaderOrigin, "http://openliberty.io");
 
         simpleResponseHeaders.put(response_header_access_control_allow_origin,
                 "http://openliberty.io");
@@ -63,7 +63,7 @@ public class TestData {
         simpleResponseHeaders.put(response_header_access_control_expose_headers,
                 "MyHeader");
 
-        preflightRequestHeaders.put(request_header_origin, "anywebsiteyoulike.com");
+        preflightRequestHeaders.put(requestHeaderOrigin, "anywebsiteyoulike.com");
         preflightRequestHeaders.put(request_header_access_control_request_method,
                 "DELETE");
         preflightRequestHeaders.put(request_header_access_control_request_headers,
