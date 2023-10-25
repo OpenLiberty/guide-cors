@@ -17,14 +17,14 @@ import java.util.Map;
 public class TestData {
 
     public static  String requestHeaderOrigin;
-    public static  String RequestHeaderAccessControlRequestMethod;
-    public static  String RequestHeaderAccessControlRequestHeaders;
-    public static  String ResponseHeaderAccessControlAllowOrigin;
-    public static  String ResponseHeaderAccessControlAllowCredentials;
-    public static  String ResponseHeaderAccessControlExposeHeaders;
-    public static  String ResponseHeaderAccessControlMaxAge;
-    public static  String ResponseHeaderAccessControlAllowMethods;
-    public static  String ResponseHeaderAccessControlAllowHeaders;
+    public static  String requestHeaderAccessControlRequestMethod;
+    public static  String requestHeaderAccessControlRequestHeaders;
+    public static  String responseHeaderAccessControlAllowOrigin;
+    public static  String responseHeaderAccessControlAllowCredentials;
+    public static  String responseHeaderAccessControlExposeHeaders;
+    public static  String responseHeaderAccessControlMaxAge;
+    public static  String responseHeaderAccessControlAllowMethods;
+    public static  String responseHeaderAccessControlAllowHeaders;
     public static Map<String, String> simpleRequestHeaders;
     public static Map<String, String> simpleResponseHeaders;
     public static Map<String, String> preflightRequestHeaders;
@@ -37,15 +37,15 @@ public class TestData {
         prefix = "Access-Control-";
 
         requestHeaderOrigin = "Origin";
-        RequestHeaderAccessControlRequestMethod = prefix + "Request-Method";
-        RequestHeaderAccessControlRequestHeaders = prefix + "Request-Headers";
+        requestHeaderAccessControlRequestMethod = prefix + "Request-Method";
+        requestHeaderAccessControlRequestHeaders = prefix + "Request-Headers";
 
-        ResponseHeaderAccessControlAllowOrigin = prefix + "Allow-Origin";
-        ResponseHeaderAccessControlAllowCredentials = prefix + "Allow-Credentials";
-        ResponseHeaderAccessControlExposeHeaders = prefix + "Expose-Headers";
-        ResponseHeaderAccessControlMaxAge = prefix + "Max-Age";
-        ResponseHeaderAccessControlAllowMethods = prefix + "Allow-Methods";
-        ResponseHeaderAccessControlAllowHeaders = prefix + "Allow-Headers";
+        responseHeaderAccessControlAllowOrigin = prefix + "Allow-Origin";
+        responseHeaderAccessControlAllowCredentials = prefix + "Allow-Credentials";
+        responseHeaderAccessControlExposeHeaders = prefix + "Expose-Headers";
+        responseHeaderAccessControlMaxAge = prefix + "Max-Age";
+        responseHeaderAccessControlAllowMethods = prefix + "Allow-Methods";
+        responseHeaderAccessControlAllowHeaders = prefix + "Allow-Headers";
 
         simpleRequestHeaders = new HashMap<String, String>();
         simpleResponseHeaders = new HashMap<String, String>();
@@ -56,27 +56,27 @@ public class TestData {
 
         simpleRequestHeaders.put(requestHeaderOrigin, "http://openliberty.io");
 
-        simpleResponseHeaders.put(ResponseHeaderAccessControlAllowOrigin,
+        simpleResponseHeaders.put(responseHeaderAccessControlAllowOrigin,
                 "http://openliberty.io");
-        simpleResponseHeaders.put(ResponseHeaderAccessControlAllowCredentials,
+        simpleResponseHeaders.put(responseHeaderAccessControlAllowCredentials,
                 "true");
-        simpleResponseHeaders.put(ResponseHeaderAccessControlExposeHeaders,
+        simpleResponseHeaders.put(responseHeaderAccessControlExposeHeaders,
                 "MyHeader");
 
         preflightRequestHeaders.put(requestHeaderOrigin, "anywebsiteyoulike.com");
-        preflightRequestHeaders.put(RequestHeaderAccessControlRequestMethod,
+        preflightRequestHeaders.put(requestHeaderAccessControlRequestMethod,
                 "DELETE");
-        preflightRequestHeaders.put(RequestHeaderAccessControlRequestHeaders,
+        preflightRequestHeaders.put(requestHeaderAccessControlRequestHeaders,
                 "MyOwnHeader2");
 
-        preflightResponseHeaders.put(ResponseHeaderAccessControlAllowOrigin,
+        preflightResponseHeaders.put(responseHeaderAccessControlAllowOrigin,
                 "anywebsiteyoulike.com");
-        preflightResponseHeaders.put(ResponseHeaderAccessControlAllowCredentials,
+        preflightResponseHeaders.put(responseHeaderAccessControlAllowCredentials,
                 "true");
-        preflightResponseHeaders.put(ResponseHeaderAccessControlMaxAge, "10");
-        preflightResponseHeaders.put(ResponseHeaderAccessControlAllowMethods,
+        preflightResponseHeaders.put(responseHeaderAccessControlMaxAge, "10");
+        preflightResponseHeaders.put(responseHeaderAccessControlAllowMethods,
                 "OPTIONS, DELETE");
-        preflightResponseHeaders.put(ResponseHeaderAccessControlAllowHeaders,
+        preflightResponseHeaders.put(responseHeaderAccessControlAllowHeaders,
                 "MyOwnHeader1, MyOwnHeader2");
     }
 
