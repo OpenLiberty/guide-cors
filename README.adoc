@@ -203,16 +203,16 @@ The preflight CORS configuration has different values than the simple CORS confi
 [cols="1, 2", options="header"]
 |===
 | *Configuration Attribute* | *Value*
-| [hotspot=24 file=0]`domain`|The value is set to `/configurations/preflight` because the `domain` is a different endpoint.
-| [hotspot=25 file=0]`allowedOrigins`| Origins that are allowed to access the endpoint. The value is set to an asterisk (*) to allow requests from all origins.
-| [hotspot=26 file=0]`allowedMethods`| HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `OPTIONS, DELETE`.
-| [hotspot=27 file=0]`allowCredentials`| A boolean that indicates whether the user credentials can be included in the request. The value is set to `true`.
+| [hotspot=25 file=0]`domain`|The value is set to `/configurations/preflight` because the `domain` is a different endpoint.
+| [hotspot=26 file=0]`allowedOrigins`| Origins that are allowed to access the endpoint. The value is set to an asterisk (*) to allow requests from all origins.
+| [hotspot=27 file=0]`allowedMethods`| HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `OPTIONS, DELETE`.
+| [hotspot=28 file=0]`allowCredentials`| A boolean that indicates whether the user credentials can be included in the request. The value is set to `true`.
 |===
 
 The following attributes were added:
 
-* [hotspot=28 file=0]`allowedHeaders`: Headers that a client can use in requests. Set the value to `MyOwnHeader1, MyOwnHeader2`.
-* [hotspot=29 file=0]`maxAge`: The number of seconds that a client can cache a response to a preflight request. Set the value to `10`.
+* [hotspot=29 file=0]`allowedHeaders`: Headers that a client can use in requests. Set the value to `MyOwnHeader1, MyOwnHeader2`.
+* [hotspot=30 file=0]`maxAge`: The number of seconds that a client can cache a response to a preflight request. Set the value to `10`.
 
 Save the changes to the [hotspot file=0]`server.xml` configuration file. The `/configurations/preflight` endpoint is now ready to be tested with a preflight CORS request.
 
