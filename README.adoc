@@ -38,7 +38,7 @@ Cross-Origin Resource Sharing (CORS) is a W3C specification and mechanism that y
 
 CORS is useful for requesting different kinds of data from websites that aren't your own. These types of data might include images, videos, scripts, stylesheets, iFrames, or web fonts.
 
-However, you cannot request resources from another website domain without proper permission. In JavaScript, cross-origin requests with an `XMLHttpRequest` API and Ajax cannot happen unless CORS is enabled on the server that receives the request. Otherwise, same-origin security policy prevents the requests. For example, a web page that is served from the `\http://aboutcors.com` server sends a request to get data to the `\http://openliberty.io` server. Because of security concerns, browsers block the server response unless the server adds HTTP response headers to allow the web page to consume the data.
+However, you cannot request resources from another website domain without proper permission. In JavaScript, cross-origin requests with an `XMLHttpRequest` API and Ajax cannot happen unless CORS is enabled on the server that receives the request. Otherwise, same-origin security policy prevents the requests. For example, a web page that is served from the `\http://aboutcors.com` server sends a request to get data to the `\\http://openliberty.io` server. Because of security concerns, browsers block the server response unless the server adds HTTP response headers to allow the web page to consume the data.
 
 Different ports and different protocols also trigger CORS. For example, the `\http://abc.xyz:1234` domain is considered to be different from the `\https://abc.xyz:4321` domain.
 
@@ -114,7 +114,7 @@ The CORS configuration contains the following attributes:
 |===
 | *Configuration Attribute* | *Value*
 |[hotspot=17 file=0]`domain` | The endpoint to be configured for CORS requests. The value is set to `/configurations/simple`.
-|[hotspot=18 file=0]`allowedOrigins` | Origins that are allowed to access the endpoint. The value is set to `http://openliberty.io`.
+|[hotspot=18 file=0]`allowedOrigins` | Origins that are allowed to access the endpoint. The value is set to `\\http://openliberty.io`.
 |[hotspot=19 file=0]`allowedMethods` | HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `GET`.
 |[hotspot=20 file=0]`allowCredentials` | A boolean that indicates whether the user credentials can be included in the request. The value is set to `true`.
 |[hotspot=21 file=0]`exposeHeaders` | Headers that are safe to expose to clients. The value is set to `MyHeader`.
@@ -147,7 +147,7 @@ The request is a [hotspot=get file=1]`GET` HTTP request with the following heade
 [cols="1, 2", options="header"]
 |===
 | *Request Header* | *Request Value*
-| Origin | The value is set to `http://openliberty.io`. Indicates that the request originates from `http://openliberty.io`.
+| Origin | The value is set to `\\http://openliberty.io`. Indicates that the request originates from `\\http://openliberty.io`.
 |===
 
 Expect the following response headers and values if the simple CORS request is successful, and the Liberty instance is correctly configured:
@@ -155,7 +155,7 @@ Expect the following response headers and values if the simple CORS request is s
 [cols="1, 2", options="header"]
 |===
 | *Response Header* | *Response Value*
-| Access-Control-Allow-Origin | The expected value is `http://openliberty.io`. Indicates whether a resource can be shared based on the returning value of the Origin request header `http://openliberty.io`.
+| Access-Control-Allow-Origin | The expected value is `\http://openliberty.io`. Indicates whether a resource can be shared based on the returning value of the Origin request header `\http://openliberty.io`.
 | Access-Control-Allow-Credentials | The expected value is `true`. Indicates that the user credentials can be included in the request.
 | Access-Control-Expose-Headers |  The expected value is `MyHeader`. Indicates that the header `MyHeader` is safe to expose.
 |===
@@ -170,7 +170,7 @@ Response headers with their values from the endpoint:
 --- Simple CORS Request ---
 Header null = [HTTP/1.1 200 OK]
 Header Access-Control-Expose-Headers = [MyHeader]
-Header Access-Control-Allow-Origin = [http://openliberty.io]
+Header Access-Control-Allow-Origin = [\http://openliberty.io]
 Header Access-Control-Allow-Credentials = [true]
 Header Content-Length = [22]
 Header Content-Language = [en-CA]
