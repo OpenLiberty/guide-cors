@@ -170,7 +170,7 @@ Response headers with their values from the endpoint:
 --- Simple CORS Request ---
 Header null = [HTTP/1.1 200 OK]
 Header Access-Control-Expose-Headers = [MyHeader]
-Header Access-Control-Allow-Origin = [\http://openliberty.io]
+Header Access-Control-Allow-Origin = [http://openliberty.io]
 Header Access-Control-Allow-Credentials = [true]
 Header Content-Length = [22]
 Header Content-Language = [en-CA]
