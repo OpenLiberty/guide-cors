@@ -1,6 +1,6 @@
 // tag::copyright[]
 /*******************************************************************************
- * Copyright (c) 2017, 2019 IBM Corporation and others.
+ * Copyright (c) 2017, 2023 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
  * which accompanies this distribution, and is available at
@@ -16,68 +16,38 @@ import java.util.Map;
 
 public class TestData {
 
-    public static  String requestHeaderOrigin;
-    public static  String requestHeaderAccessControlRequestMethod;
-    public static  String requestHeaderAccessControlRequestHeaders;
-    public static  String responseHeaderAccessControlAllowOrigin;
-    public static  String responseHeaderAccessControlAllowCredentials;
-    public static  String responseHeaderAccessControlExposeHeaders;
-    public static  String responseHeaderAccessControlMaxAge;
-    public static  String responseHeaderAccessControlAllowMethods;
-    public static  String responseHeaderAccessControlAllowHeaders;
-    public static Map<String, String> simpleRequestHeaders;
-    public static Map<String, String> simpleResponseHeaders;
-    public static Map<String, String> preflightRequestHeaders;
-    public static Map<String, String> preflightResponseHeaders;
+  static final String ORIGIN = "Origin";
+  static final String AC_REQUEST_METHOD = "Access-Control-Request-Method";
+  static final String AC_REQUEST_HEADERS = "Access-Control-Request-Headers";
 
-    public static String prefix;
+  static final String AC_ALLOW_ORIGIN = "Access-Control-Allow-Origin";
+  static final String AC_ALLOW_CREDENTIALS = "Access-Control-Allow-Credentials";
+  static final String AC_EXPOSE_HEADERS = "Access-Control-Expose-Headers";
+  static final String AC_MAX_AGE = "Access-Control-Max-Age";
+  static final String AC_ALLOW_METHODS = "Access-Control-Allow-Methods";
+  static final String AC_ALLOW_HEADERS = "Access-Control-Allow-Headers";
 
-    static {
+  static Map<String, String> simpleRequestHeaders = new HashMap<String, String>();
+  static Map<String, String> simpleResponseHeaders = new HashMap<String, String>();
 
-        prefix = "Access-Control-";
+  static Map<String, String> preflightRequestHeaders = new HashMap<String, String>();
+  static Map<String, String> preflightResponseHeaders = new HashMap<String, String>();
 
-        requestHeaderOrigin = "Origin";
-        requestHeaderAccessControlRequestMethod = prefix + "Request-Method";
-        requestHeaderAccessControlRequestHeaders = prefix + "Request-Headers";
+  static {
+      simpleRequestHeaders.put(ORIGIN, "openliberty.io");
 
-        responseHeaderAccessControlAllowOrigin = prefix + "Allow-Origin";
-        responseHeaderAccessControlAllowCredentials = prefix + "Allow-Credentials";
-        responseHeaderAccessControlExposeHeaders = prefix + "Expose-Headers";
-        responseHeaderAccessControlMaxAge = prefix + "Max-Age";
-        responseHeaderAccessControlAllowMethods = prefix + "Allow-Methods";
-        responseHeaderAccessControlAllowHeaders = prefix + "Allow-Headers";
+      simpleResponseHeaders.put(AC_ALLOW_ORIGIN, "openliberty.io");
+      simpleResponseHeaders.put(AC_ALLOW_CREDENTIALS, "true");
+      simpleResponseHeaders.put(AC_EXPOSE_HEADERS, "MyHeader");
+      preflightRequestHeaders.put(ORIGIN, "anywebsiteyoulike.com");
+      preflightRequestHeaders.put(AC_REQUEST_METHOD, "DELETE");
+      preflightRequestHeaders.put(AC_REQUEST_HEADERS, "MyOwnHeader2");
 
-        simpleRequestHeaders = new HashMap<String, String>();
-        simpleResponseHeaders = new HashMap<String, String>();
-
-        preflightRequestHeaders = new HashMap<String, String>();
-        preflightResponseHeaders = new HashMap<String, String>();
-
-
-        simpleRequestHeaders.put(requestHeaderOrigin, "http://openliberty.io");
-
-        simpleResponseHeaders.put(responseHeaderAccessControlAllowOrigin,
-                "http://openliberty.io");
-        simpleResponseHeaders.put(responseHeaderAccessControlAllowCredentials,
-                "true");
-        simpleResponseHeaders.put(responseHeaderAccessControlExposeHeaders,
-                "MyHeader");
-
-        preflightRequestHeaders.put(requestHeaderOrigin, "anywebsiteyoulike.com");
-        preflightRequestHeaders.put(requestHeaderAccessControlRequestMethod,
-                "DELETE");
-        preflightRequestHeaders.put(requestHeaderAccessControlRequestHeaders,
-                "MyOwnHeader2");
-
-        preflightResponseHeaders.put(responseHeaderAccessControlAllowOrigin,
-                "anywebsiteyoulike.com");
-        preflightResponseHeaders.put(responseHeaderAccessControlAllowCredentials,
-                "true");
-        preflightResponseHeaders.put(responseHeaderAccessControlMaxAge, "10");
-        preflightResponseHeaders.put(responseHeaderAccessControlAllowMethods,
-                "OPTIONS, DELETE");
-        preflightResponseHeaders.put(responseHeaderAccessControlAllowHeaders,
-                "MyOwnHeader1, MyOwnHeader2");
-    }
+      preflightResponseHeaders.put(AC_ALLOW_ORIGIN, "anywebsiteyoulike.com");
+      preflightResponseHeaders.put(AC_ALLOW_CREDENTIALS, "true");
+      preflightResponseHeaders.put(AC_MAX_AGE, "10");
+      preflightResponseHeaders.put(AC_ALLOW_METHODS, "OPTIONS, DELETE");
+      preflightResponseHeaders.put(AC_ALLOW_HEADERS, "MyOwnHeader1, MyOwnHeader2");
+  }
 
 }
