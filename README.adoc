@@ -113,11 +113,11 @@ The CORS configuration contains the following attributes:
 [cols="1, 2", options="header"]
 |===
 | *Configuration Attribute* | *Value*
-|[hotspot=16 file=0]`domain` | The endpoint to be configured for CORS requests. The value is set to `/configurations/simple`.
-|[hotspot=17 file=0]`allowedOrigins` | Origins that are allowed to access the endpoint. The value is set to `openliberty.io`.
-|[hotspot=18 file=0]`allowedMethods` | HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `GET`.
-|[hotspot=19 file=0]`allowCredentials` | A boolean that indicates whether the user credentials can be included in the request. The value is set to `true`.
-|[hotspot=20 file=0]`exposeHeaders` | Headers that are safe to expose to clients. The value is set to `MyHeader`.
+|[hotspot=17 file=0]`domain` | The endpoint to be configured for CORS requests. The value is set to `/configurations/simple`.
+|[hotspot=18 file=0]`allowedOrigins` | Origins that are allowed to access the endpoint. The value is set to `\http://openliberty.io`.
+|[hotspot=19 file=0]`allowedMethods` | HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `GET`.
+|[hotspot=20 file=0]`allowCredentials` | A boolean that indicates whether the user credentials can be included in the request. The value is set to `true`.
+|[hotspot=21 file=0]`exposeHeaders` | Headers that are safe to expose to clients. The value is set to `MyHeader`.
 |===
 
 For more information about these and other CORS attributes, see the https://www.openliberty.io/docs/latest/reference/config/cors.html[cors element documentation^].
@@ -147,7 +147,7 @@ The request is a [hotspot=get file=1]`GET` HTTP request with the following heade
 [cols="1, 2", options="header"]
 |===
 | *Request Header* | *Request Value*
-| Origin | The value is set to `openliberty.io`. Indicates that the request originates from `openliberty.io`.
+| Origin | The value is set to `\http://openliberty.io`. Indicates that the request originates from `\http://openliberty.io`.
 |===
 
 Expect the following response headers and values if the simple CORS request is successful, and the Liberty instance is correctly configured:
@@ -155,7 +155,7 @@ Expect the following response headers and values if the simple CORS request is s
 [cols="1, 2", options="header"]
 |===
 | *Response Header* | *Response Value*
-| Access-Control-Allow-Origin | The expected value is `openliberty.io`. Indicates whether a resource can be shared based on the returning value of the Origin request header `openliberty.io`.
+| Access-Control-Allow-Origin | The expected value is `\http://openliberty.io`. Indicates whether a resource can be shared based on the returning value of the Origin request header `\http://openliberty.io`.
 | Access-Control-Allow-Credentials | The expected value is `true`. Indicates that the user credentials can be included in the request.
 | Access-Control-Expose-Headers |  The expected value is `MyHeader`. Indicates that the header `MyHeader` is safe to expose.
 |===
@@ -170,7 +170,7 @@ Response headers with their values from the endpoint:
 --- Simple CORS Request ---
 Header null = [HTTP/1.1 200 OK]
 Header Access-Control-Expose-Headers = [MyHeader]
-Header Access-Control-Allow-Origin = [openliberty.io]
+Header Access-Control-Allow-Origin = [http://openliberty.io]
 Header Access-Control-Allow-Credentials = [true]
 Header Content-Length = [22]
 Header Content-Language = [en-CA]
@@ -203,16 +203,16 @@ The preflight CORS configuration has different values than the simple CORS confi
 [cols="1, 2", options="header"]
 |===
 | *Configuration Attribute* | *Value*
-| [hotspot=24 file=0]`domain`|The value is set to `/configurations/preflight` because the `domain` is a different endpoint.
-| [hotspot=25 file=0]`allowedOrigins`| Origins that are allowed to access the endpoint. The value is set to an asterisk (*) to allow requests from all origins.
-| [hotspot=26 file=0]`allowedMethods`| HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `OPTIONS, DELETE`.
-| [hotspot=27 file=0]`allowCredentials`| A boolean that indicates whether the user credentials can be included in the request. The value is set to `true`.
+| [hotspot=25 file=0]`domain`|The value is set to `/configurations/preflight` because the `domain` is a different endpoint.
+| [hotspot=26 file=0]`allowedOrigins`| Origins that are allowed to access the endpoint. The value is set to an asterisk (*) to allow requests from all origins.
+| [hotspot=27 file=0]`allowedMethods`| HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `OPTIONS, DELETE`.
+| [hotspot=28 file=0]`allowCredentials`| A boolean that indicates whether the user credentials can be included in the request. The value is set to `true`.
 |===
 
 The following attributes were added:
 
-* [hotspot=28 file=0]`allowedHeaders`: Headers that a client can use in requests. Set the value to `MyOwnHeader1, MyOwnHeader2`.
-* [hotspot=29 file=0]`maxAge`: The number of seconds that a client can cache a response to a preflight request. Set the value to `10`.
+* [hotspot=29 file=0]`allowedHeaders`: Headers that a client can use in requests. Set the value to `MyOwnHeader1, MyOwnHeader2`.
+* [hotspot=30 file=0]`maxAge`: The number of seconds that a client can cache a response to a preflight request. Set the value to `10`.
 
 Save the changes to the [hotspot file=0]`server.xml` configuration file. The `/configurations/preflight` endpoint is now ready to be tested with a preflight CORS request.
 
