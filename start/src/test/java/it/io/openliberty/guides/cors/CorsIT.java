@@ -1,4 +1,4 @@
-// tag::comment[]
+// tag::copyright[]
 /*******************************************************************************
  * Copyright (c) 2017, 2024 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -9,7 +9,7 @@
  * Contributors:
  *     IBM Corporation - Initial implementation
  *******************************************************************************/
-// end::comment[]
+// end::copyright[]
 package it.io.openliberty.guides.cors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -43,7 +43,8 @@ public class CorsIT {
         });
     }
 
-    public static void printResponseHeaders(HttpURLConnection connection, String label) {
+    public static void printResponseHeaders(HttpURLConnection connection,
+                           String label) {
         System.out.println("--- " + label + " ---");
         Map<String, java.util.List<String>> map = connection.getHeaderFields();
         for (Entry<String, java.util.List<String>> entry : map.entrySet()) {
