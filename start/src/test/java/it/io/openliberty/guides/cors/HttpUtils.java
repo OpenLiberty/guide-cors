@@ -20,13 +20,14 @@ import java.util.Map.Entry;
 
 public class HttpUtils {
 
-    public static HttpURLConnection sendRequest(String path, String methods, Map<String, String> requestHeaders)
-        throws IOException {
-    	return getHttpConnection(new URL(path), methods, requestHeaders);
+    public static HttpURLConnection sendRequest(String path, String methods,
+                  Map<String, String> requestHeaders) throws IOException {
+        return getHttpConnection(new URL(path), methods, requestHeaders);
     }
 
-    public static HttpURLConnection getHttpConnection(URL targetURL, String httpRequestMethod,
-        Map<String, String> headers) throws IOException {
+    public static HttpURLConnection getHttpConnection(URL targetURL,
+                  String httpRequestMethod, Map<String, String> headers)
+                  throws IOException {
         HttpURLConnection connection = (HttpURLConnection) targetURL.openConnection();
         Iterator<Entry<String, String>> entries = headers.entrySet().iterator();
         while (entries.hasNext()) {
