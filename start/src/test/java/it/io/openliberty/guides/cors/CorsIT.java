@@ -1,15 +1,14 @@
-// tag::comment[]
+// tag::copyright[]
 /*******************************************************************************
- * Copyright (c) 2017, 2019 IBM Corporation and others.
+ * Copyright (c) 2017, 2024 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License 2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+ * http://www.eclipse.org/legal/epl-2.0/
  *
- * Contributors:
- *     IBM Corporation - Initial implementation
+ * SPDX-License-Identifier: EPL-2.0
  *******************************************************************************/
-// end::comment[]
+// end::copyright[]
 package it.io.openliberty.guides.cors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -24,7 +23,7 @@ import org.junit.jupiter.api.Test;
 
 public class CorsIT {
 
-    String port = System.getProperty("default.http.port");
+    String port = System.getProperty("http.port");
     String pathToHost = "http://localhost:" + port + "/";
 
     @BeforeEach
@@ -43,7 +42,8 @@ public class CorsIT {
         });
     }
 
-    public static void printResponseHeaders(HttpURLConnection connection, String label) {
+    public static void printResponseHeaders(HttpURLConnection connection,
+                           String label) {
         System.out.println("--- " + label + " ---");
         Map<String, java.util.List<String>> map = connection.getHeaderFields();
         for (Entry<String, java.util.List<String>> entry : map.entrySet()) {
