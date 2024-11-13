@@ -1,8 +1,9 @@
 <server description="Sample Liberty server">
 
 <featureManager>
-    <feature>restfulWS-3.1</feature>
-    <feature>jsonb-3.0</feature>
+    <platform>jakartaee-10.0</platform>
+    <feature>restfulWS</feature>
+    <feature>jsonb</feature>
 </featureManager>
 
 <variable name="http.port" defaultValue="9080"/>
