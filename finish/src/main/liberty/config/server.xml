@@ -1,32 +1,34 @@
 <server description="Sample Liberty server">
 
-<featureManager>
-    <feature>restfulWS-3.1</feature>
-    <feature>jsonb-3.0</feature>
-</featureManager>
+    <featureManager>
+        <platform>jakartaee-10.0</platform>
+        <feature>restfulWS</feature>
+        <feature>jsonb</feature>
+    </featureManager>
 
-<variable name="http.port" defaultValue="9080"/>
-<variable name="https.port" defaultValue="9443"/>
+    <variable name="http.port" defaultValue="9080"/>
+    <variable name="https.port" defaultValue="9443"/>
 
-<httpEndpoint host="*" httpPort="${http.port}" httpsPort="${https.port}"
-    id="defaultHttpEndpoint"/>
+    <httpEndpoint id="defaultHttpEndpoint"
+        host="*" httpPort="${http.port}" httpsPort="${https.port}"/>
 
-<webApplication location="guide-cors.war" contextRoot="/"/>
+    <webApplication location="guide-cors.war" contextRoot="/"/>
 
-<!-- tag::simple-config[] -->
-<cors domain="/configurations/simple"
-    allowedOrigins="http://openliberty.io"
-    allowedMethods="GET"
-    allowCredentials="true"
-    exposeHeaders="MyHeader"/>
-<!-- end::simple-config[] -->
+    <!-- tag::simple-config[] -->
+    <cors domain="/configurations/simple"
+        allowedOrigins="http://openliberty.io"
+        allowedMethods="GET"
+        allowCredentials="true"
+        exposeHeaders="MyHeader"/>
+    <!-- end::simple-config[] -->
 
-<!-- tag::preflight-config[] -->
-<cors domain="/configurations/preflight"
-    allowedOrigins="*"
-    allowedMethods="OPTIONS, DELETE"
-    allowCredentials="true"
-    allowedHeaders="MyOwnHeader1, MyOwnHeader2"
-    maxAge="10"/>
-<!-- end::preflight-config[] -->
+    <!-- tag::preflight-config[] -->
+    <cors domain="/configurations/preflight"
+        allowedOrigins="*"
+        allowedMethods="OPTIONS, DELETE"
+        allowCredentials="true"
+        allowedHeaders="MyOwnHeader1, MyOwnHeader2"
+        maxAge="10"/>
+    <!-- end::preflight-config[] -->
+
 </server>
