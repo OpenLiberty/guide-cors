@@ -113,11 +113,11 @@ The CORS configuration contains the following attributes:
 [cols="1, 2", options="header"]
 |===
 | *Configuration Attribute* | *Value*
-|[hotspot=17 file=0]`domain` | The endpoint to be configured for CORS requests. The value is set to `/configurations/simple`.
-|[hotspot=18 file=0]`allowedOrigins` | Origins that are allowed to access the endpoint. The value is set to `\http://openliberty.io`.
-|[hotspot=19 file=0]`allowedMethods` | HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `GET`.
-|[hotspot=20 file=0]`allowCredentials` | A boolean that indicates whether the user credentials can be included in the request. The value is set to `true`.
-|[hotspot=21 file=0]`exposeHeaders` | Headers that are safe to expose to clients. The value is set to `MyHeader`.
+|[hotspot=18 file=0]`domain` | The endpoint to be configured for CORS requests. The value is set to `/configurations/simple`.
+|[hotspot=19 file=0]`allowedOrigins` | Origins that are allowed to access the endpoint. The value is set to `\http://openliberty.io`.
+|[hotspot=20 file=0]`allowedMethods` | HTTP methods that a client is allowed to use when it makes requests to the endpoint. The value is set to `GET`.
+|[hotspot=21 file=0]`allowCredentials` | A boolean that indicates whether the user credentials can be included in the request. The value is set to `true`.
+|[hotspot=22 file=0]`exposeHeaders` | Headers that are safe to expose to clients. The value is set to `MyHeader`.
 |===
 
 For more information about these and other CORS attributes, see the https://www.openliberty.io/docs/latest/reference/config/cors.html[cors element documentation^].
